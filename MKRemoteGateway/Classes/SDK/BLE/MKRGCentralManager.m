@@ -48,7 +48,7 @@ static dispatch_once_t onceToken;
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self logToLocal:@"MKBVCentralManager初始化"];
+        [self logToLocal:@"MKRGCentralManager初始化"];
         [[MKBLEBaseCentralManager shared] loadDataManager:self];
     }
     return self;
@@ -317,6 +317,8 @@ static dispatch_once_t onceToken;
     }
     __weak typeof(self) weakSelf = self;
     MKRGOperation <MKBLEBaseOperationProtocol>*operation = [[MKRGOperation alloc] initOperationWithID:operationID commandBlock:^{
+        __strong typeof(self) sself = weakSelf;
+        [self saveToLogData:commandData appToDevice:YES];
         [[MKBLEBaseCentralManager shared] sendDataToPeripheral:commandData characteristic:characteristic type:CBCharacteristicWriteWithResponse];
     } completeBlock:^(NSError * _Nullable error, id  _Nullable returnData) {
         __strong typeof(self) sself = weakSelf;
@@ -359,6 +361,9 @@ static dispatch_once_t onceToken;
     }
     __weak typeof(self) weakSelf = self;
     MKRGOperation <MKBLEBaseOperationProtocol>*operation = [[MKRGOperation alloc] initOperationWithID:operationID commandBlock:^{
+        __strong typeof(self) sself = weakSelf;
+        NSString *charID = [NSString stringWithFormat:@"Read %@",characteristic.UUID.UUIDString];
+        [self saveToLogData:charID appToDevice:YES];
         [[MKBLEBaseCentralManager shared].peripheral readValueForCharacteristic:characteristic];
     } completeBlock:^(NSError * _Nullable error, id  _Nullable returnData) {
         __strong typeof(self) sself = weakSelf;

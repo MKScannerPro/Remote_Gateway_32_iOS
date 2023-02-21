@@ -37,13 +37,6 @@ static dispatch_once_t onceToken;
 }
 
 #pragma mark - public method
-/// 当前设备的deviceID
-- (NSString *)deviceID {
-    if (!self.protocol) {
-        return @"";
-    }
-    return SafeStr(self.protocol.deviceID);
-}
 
 /// 当前设备的mac地址
 - (NSString *)macAddress {
