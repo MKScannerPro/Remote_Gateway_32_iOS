@@ -8,6 +8,14 @@
 
 #import "Target_ScannerPro_RemoteGateway_Module.h"
 
+#import "MKRGDeviceListController.h"
+
 @implementation Target_ScannerPro_RemoteGateway_Module
+
+- (UIViewController *)Action_MKScannerPro_RemoteGateway_DeviceListPage:(NSDictionary *)params {
+    MKRGDeviceListController *vc = [[MKRGDeviceListController alloc] init];
+    vc.connectServer = YES;
+    return vc;
+}
 
 @end

@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Target_ScannerPro_RemoteGateway_Module : NSObject
 
+/// 设备列表页面
+/// @param params @{}
+- (UIViewController *)Action_MKScannerPro_RemoteGateway_DeviceListPage:(NSDictionary *)params;
+
 @end
 
 NS_ASSUME_NONNULL_END
