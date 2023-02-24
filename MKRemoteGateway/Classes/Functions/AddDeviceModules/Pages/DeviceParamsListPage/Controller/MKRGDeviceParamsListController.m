@@ -92,7 +92,7 @@ static NSString *const noteMsg = @"Please note the WIFI settings and MQTT settin
 
 #pragma mark - super method
 - (void)leftButtonMethod {
-    [super leftButtonMethod];
+    [self popToViewControllerWithClassName:@"MKRGScanPageController"];
     [[MKRGCentralManager shared] disconnect];
     [MKRGDeviceMQTTParamsModel sharedDealloc];
 }

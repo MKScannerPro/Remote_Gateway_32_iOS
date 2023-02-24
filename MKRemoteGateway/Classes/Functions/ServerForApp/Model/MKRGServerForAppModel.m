@@ -23,14 +23,14 @@
 }
 
 - (void)clearAllParams {
-    _host = @"47.104.81.55";
-    _port = @"1883";
-    _clientID = [self fetchClientID];
+    _host = @"";
+    _port = @"";
+    _clientID = @"";
     _subscribeTopic = @"";
     _publishTopic = @"";
     _cleanSession = YES;
-    _qos = 1;
-    _keepAlive = @"60";
+    _qos = 0;
+    _keepAlive = @"";
     _userName = @"";
     _password = @"";
     _sslIsOn = NO;
@@ -61,20 +61,23 @@
     if (!ValidStr(self.keepAlive) || [self.keepAlive integerValue] < 10 || [self.keepAlive integerValue] > 120) {
         return @"KeepAlive error";
     }
-    if (self.userName.length > 128 || (ValidStr(self.userName) && ![self.userName isAsciiString])) {
+    if (self.userName.length > 256 || (ValidStr(self.userName) && ![self.userName isAsciiString])) {
         return @"UserName error";
     }
-    if (self.password.length > 128 || (ValidStr(self.password) && ![self.password isAsciiString])) {
+    if (self.password.length > 256 || (ValidStr(self.password) && ![self.password isAsciiString])) {
         return @"Password error";
     }
     if (self.sslIsOn) {
-        if (self.certificate < 0 || self.certificate > 1) {
+        if (self.certificate < 0 || self.certificate > 2) {
             return @"Certificate error";
+        }
+        if (self.certificate == 0) {
+            return @"";
         }
         if (!ValidStr(self.caFileName)) {
             return @"CA File cannot be empty.";
         }
-        if (self.certificate == 1 && !ValidStr(self.clientFileName)) {
+        if (self.certificate == 2 && !ValidStr(self.clientFileName)) {
             return @"Client File cannot be empty.";
         }
     }
@@ -110,7 +113,7 @@
         self.clientID = [@"MK_" stringByAppendingString:tempID];
         self.cleanSession = YES;
         self.keepAlive = @"60";
-        self.qos = 1;
+        self.qos = 0;
         return;
     }
     self.host = [MKRGMQTTDataManager shared].serverParams.host;

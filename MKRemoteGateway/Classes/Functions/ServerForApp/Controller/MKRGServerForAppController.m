@@ -594,7 +594,7 @@ MFMailComposeViewControllerDelegate>
     cellModel2.textFieldType = mk_normal;
     cellModel2.textFieldValue = self.dataModel.publishTopic;
     cellModel2.maxLength = 128;
-    cellModel2.noteMsg = @"Note: Input your topics to communicate with the device or set the topics to empty.";
+    cellModel2.noteMsg = @"Note: The topic settings is only for connecting to Alibaba iot.Please leave it blank if connecting to a MQTT broker or AWS iot.";
     [self.section1List addObject:cellModel2];
 }
 
