@@ -192,6 +192,7 @@ MKRGNormalConnectedCellDelegate>
     if (![dataDic[@"mac"] isEqualToString:self.deviceBleInfo[@"data"][@"mac"]]) {
         return;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_rg_needDismissAlert" object:nil];
     //返回上一级页面
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -208,11 +209,12 @@ MKRGNormalConnectedCellDelegate>
     
     NSDictionary *tempDic = self.sectionCache[dataDic[@"service_uuid"]];
     NSInteger section = [tempDic[@"section"] integerValue];
-    NSInteger row = [tempDic[@"data"][@"char_uuid"] integerValue];
+    NSString *charUUID = dataDic[@"char_uuid"];
+    NSInteger row = [tempDic[@"rowData"][charUUID] integerValue];
     NSDictionary *modelDic = self.sectionList[section];
     NSArray *charList = modelDic[@"charList"];
     MKRGNormalConnectedCellModel *cellModel = charList[row];
-    cellModel.value = tempDic[@"data"][@"payload"];
+    cellModel.value = dataDic[@"payload"];
     [self.tableView mk_reloadRow:row inSection:section withRowAnimation:UITableViewRowAnimationNone];
 }
 

@@ -21,6 +21,8 @@
 #import "MKTableSectionLineHeader.h"
 #import "MKAlertView.h"
 
+#import "MKBLEBaseSDKAdopter.h"
+
 #import "MKRGMQTTDataManager.h"
 #import "MKRGMQTTInterface.h"
 
@@ -190,6 +192,7 @@ MKButtonMsgCellDelegate>
     if (![dataDic[@"mac"] isEqualToString:self.deviceBleInfo[@"data"][@"mac"]]) {
         return;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_rg_needDismissAlert" object:nil];
     //返回上一级页面
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -251,12 +254,13 @@ MKButtonMsgCellDelegate>
     cellModel4.rightMsg = [NSString stringWithFormat:@"%@",self.bxpStatusDic[@"data"][@"long_alarm_num"]];
     
     MKNormalTextCellModel *cellModel5 = self.section2List[4];
-    NSInteger value = [self.bxpStatusDic[@"data"][@"alarm_status"] integerValue];
-    BOOL singleStatus = (value & 0x01 == 0x01);
-    BOOL doubleStatus = (value & 0x02 == 0x02);
-    BOOL longStatus = (value & 0x04 == 0x04);
-    BOOL abnormalStatus = (value & 0x08 == 0x08);
-    if (value == 0) {
+    NSString *statusValue = [MKBLEBaseSDKAdopter fetchHexValue:[self.bxpStatusDic[@"data"][@"alarm_status"] integerValue] byteLen:1];
+    NSString *binary = [MKBLEBaseSDKAdopter binaryByhex:statusValue];
+    BOOL singleStatus = [[binary substringWithRange:NSMakeRange(7, 1)] isEqualToString:@"1"];
+    BOOL doubleStatus = [[binary substringWithRange:NSMakeRange(6, 1)] isEqualToString:@"1"];
+    BOOL longStatus = [[binary substringWithRange:NSMakeRange(5, 1)] isEqualToString:@"1"];
+    BOOL abnormalStatus = [[binary substringWithRange:NSMakeRange(4, 1)] isEqualToString:@"1"];
+    if ([self.bxpStatusDic[@"data"][@"alarm_status"] integerValue] == 0) {
         //无触发
         cellModel5.rightMsg = @"Not triggered";
     }else {

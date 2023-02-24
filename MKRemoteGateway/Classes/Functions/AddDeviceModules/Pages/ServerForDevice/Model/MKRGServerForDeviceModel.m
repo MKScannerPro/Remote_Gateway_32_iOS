@@ -58,13 +58,14 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
         if (self.certificate < 0 || self.certificate > 2) {
             return @"Certificate error";
         }
-        if (self.certificate > 0) {
-            if (!ValidStr(self.caFileName)) {
-                return @"CA File cannot be empty.";
-            }
-            if (self.certificate == 2 && (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName))) {
-                return @"Client File cannot be empty.";
-            }
+        if (self.certificate == 0) {
+            return @"";
+        }
+        if (!ValidStr(self.caFileName)) {
+            return @"CA File cannot be empty.";
+        }
+        if (self.certificate == 2 && (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName))) {
+            return @"Client File cannot be empty.";
         }
     }
     if (self.lwtStatus) {
@@ -729,10 +730,12 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
         if (value == 0) {
             //TCP
             self.sslIsOn = NO;
-        }else if (value == 2) {
+        }else if (value == 1) {
             self.certificate = 0;
-        }else if (value == 3) {
+        }else if (value == 2) {
             self.certificate = 1;
+        }else if (value == 3) {
+            self.certificate = 2;
         }
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

@@ -529,7 +529,11 @@ MKRGImportServerControllerDelegate>
 }
 
 - (void)clearAllParams {
-    [self.dataModel updateValue:[[MKRGServerForDeviceModel alloc] init]];
+    MKRGServerForDeviceModel *emptyModel = [[MKRGServerForDeviceModel alloc] init];
+    emptyModel.cleanSession = YES;
+    emptyModel.lwtStatus = YES;
+    emptyModel.lwtQos = 1;
+    [self.dataModel updateValue:emptyModel];
     [self.section0List removeAllObjects];
     [self.section1List removeAllObjects];
     [self.sectionHeaderList removeAllObjects];
