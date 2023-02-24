@@ -124,13 +124,17 @@
                     [self operationFailedBlockWithMsg:@"Config CA File Error" block:failedBlock];
                     return;
                 }
-                if (![self configClientCert]) {
-                    [self operationFailedBlockWithMsg:@"Config Client Cert Error" block:failedBlock];
-                    return;
+                if (ValidStr(self.clientKeyName)) {
+                    if (![self configClientKey]) {
+                        [self operationFailedBlockWithMsg:@"Config Client Key Error" block:failedBlock];
+                        return;
+                    }
                 }
-                if (![self configClientKey]) {
-                    [self operationFailedBlockWithMsg:@"Config Client Key Error" block:failedBlock];
-                    return;
+                if (ValidStr(self.clientCertName)) {
+                    if (![self configClientCert]) {
+                        [self operationFailedBlockWithMsg:@"Config Client Cert Error" block:failedBlock];
+                        return;
+                    }
                 }
             }
         }
@@ -430,9 +434,9 @@
         if (!ValidStr(self.caFileName)) {
             return @"CA File cannot be empty.";
         }
-        if (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName)) {
-            return @"Client File cannot be empty.";
-        }
+//        if (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName)) {
+//            return @"Client File cannot be empty.";
+//        }
     }
     return @"";
 }

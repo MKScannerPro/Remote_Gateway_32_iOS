@@ -510,7 +510,7 @@ MKCAFileSelectControllerDelegate>
 - (void)loadSection4Datas {
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
     cellModel.index = 2;
-    cellModel.msg = @"Username";
+    cellModel.msg = @"EAP username";
     cellModel.maxLength = 32;
     cellModel.textPlaceholder = @"0-32 Characters";
     cellModel.textFieldType = mk_normal;
@@ -521,7 +521,7 @@ MKCAFileSelectControllerDelegate>
 - (void)loadSection5Datas {
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
     cellModel.index = 3;
-    cellModel.msg = @"Password";
+    cellModel.msg = @"EAP password";
     cellModel.maxLength = 64;
     cellModel.textPlaceholder = @"0-64 Characters";
     cellModel.textFieldType = mk_normal;

@@ -377,13 +377,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee0130";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee0130",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configCAFileQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -391,7 +390,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [caStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigCAFileOperation
                                             semaphore:semaphore];
@@ -421,13 +420,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee0131";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee0131",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configCertQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -435,7 +433,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [certStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigClientCertOperation
                                             semaphore:semaphore];
@@ -465,13 +463,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee0132";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee0132",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configPrivateKeyQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -479,7 +476,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [privateKeyStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigClientPrivateKeyOperation
                                             semaphore:semaphore];
@@ -628,13 +625,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee0148";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee0148",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configWIFICAFileQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -642,7 +638,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [caStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigWIFICAFileOperation
                                             semaphore:semaphore];
@@ -672,13 +668,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee0149";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee0149",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configWIFICertQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -686,7 +681,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [certStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigWIFIClientCertOperation
                                             semaphore:semaphore];
@@ -716,13 +711,12 @@ static const NSInteger packDataMaxLen = 150;
     if (packRemain > 0) {
         totalNum ++;
     }
-    NSString *commandHeader = @"ee014a";
+    NSString *commandHeader = [NSString stringWithFormat:@"%@%@",@"ee014a",[MKBLEBaseSDKAdopter fetchHexValue:totalNum byteLen:1]];
     dispatch_queue_t queue = dispatch_queue_create("configWIFIPrivateKeyQueue", 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i < totalNum; i ++) {
-            NSString *first = ((i == 0) ? @"01" : @"00");
-            NSString *reamin = [MKBLEBaseSDKAdopter fetchHexValue:(totalNum - 1 - i) byteLen:1];
+            NSString *index = [MKBLEBaseSDKAdopter fetchHexValue:i byteLen:1];
             NSInteger len = packDataMaxLen;
             if ((i == totalNum - 1) && (packRemain > 0)) {
                 //最后一帧
@@ -730,7 +724,7 @@ static const NSInteger packDataMaxLen = 150;
             }
             NSString *lenString = [MKBLEBaseSDKAdopter fetchHexValue:len byteLen:1];
             NSString *subChar = [privateKeyStrings substringWithRange:NSMakeRange(i * 2 * packDataMaxLen, 2 * len)];
-            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@",commandHeader,first,reamin,lenString,subChar];
+            NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@",commandHeader,index,lenString,subChar];
             BOOL success = [self sendDataToPeripheral:commandString
                                                taskID:mk_rg_taskConfigWIFIClientPrivateKeyOperation
                                             semaphore:semaphore];
