@@ -245,6 +245,9 @@
     }else if (msgID == 2011) {
         //读取指示灯开关
         operationID = mk_rg_server_taskReadIndicatorLightStatusOperation;
+    }else if (msgID == 2012) {
+        //读取设备当前OTA状态
+        operationID = mk_rg_server_taskReadOtaStatusOperation;
     }else if (msgID == 2016) {
         //读取蓝牙广播状态
         operationID = mk_rg_server_taskReadBleAdvStatusOperation;

@@ -203,6 +203,7 @@ UITableViewDataSource>
     if (index == 0) {
         //
         self.dataModel.advIsOn = isOn;
+        self.dataModel.advTime = @"";
         [self configAdvStatusParams];
         return;
     }

@@ -609,6 +609,16 @@ NS_ASSUME_NONNULL_BEGIN
                                          sucBlock:(void (^)(id returnData))sucBlock
                                       failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Query whether the device can perform OTA upgrade.
+/// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)rg_readOtaStatusWithMacAddress:(NSString *)macAddress
+                                 topic:(NSString *)topic
+                              sucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock;
+
 /// Status of the ble advertising.
 /// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
 /// @param topic topic 1-128 Characters

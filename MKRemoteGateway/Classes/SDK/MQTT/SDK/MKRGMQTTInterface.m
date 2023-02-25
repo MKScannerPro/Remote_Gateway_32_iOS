@@ -1167,7 +1167,7 @@
         [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
         return;
     }
-    if (period < 1 || period > 86400) {
+    if (filter != mk_rg_duplicateDataFilter_none && (period < 1 || period > 86400)) {
         [self operationFailedBlockWithMsg:@"Params error" failedBlock:failedBlock];
         return;
     }
@@ -1536,6 +1536,29 @@
                                      topic:topic
                                 macAddress:macAddress
                                     taskID:mk_rg_server_taskReadIndicatorLightStatusOperation
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
+}
+
++ (void)rg_readOtaStatusWithMacAddress:(NSString *)macAddress
+                                 topic:(NSString *)topic
+                              sucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
+    if (ValidStr(checkMsg)) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    NSDictionary *data = @{
+        @"msg_id":@(2012),
+        @"device_info":@{
+                @"mac":macAddress
+        },
+    };
+    [[MKRGMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_rg_server_taskReadOtaStatusOperation
                                   sucBlock:sucBlock
                                failedBlock:failedBlock];
 }

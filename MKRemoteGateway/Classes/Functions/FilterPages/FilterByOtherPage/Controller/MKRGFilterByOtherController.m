@@ -408,12 +408,12 @@ MKTextButtonCellDelegate>
             cellModel.msg = @"Condition C";
         }
         cellModel.dataTypePlaceHolder = @"Data Type";
-        cellModel.dataType = ([dic[@"type"] integerValue] == 0 ? @"" : dic[@"type"]);
-        cellModel.minTextFieldPlaceHolder = @"00-29";
-        NSString *minIndex = dic[@"start"];
+        cellModel.dataType = ([dic[@"type"] isEqualToString:@"00"] ? @"" : dic[@"type"]);
+        cellModel.minTextFieldPlaceHolder = @"1-29";
+        NSString *minIndex = [NSString stringWithFormat:@"%@",dic[@"start"]];
         cellModel.minIndex = ([minIndex integerValue] == 0 ? @"" : minIndex);
-        cellModel.maxTextFieldPlaceHolder = @"00-29";
-        NSString *endIndex = dic[@"end"];
+        cellModel.maxTextFieldPlaceHolder = @"1-29";
+        NSString *endIndex = [NSString stringWithFormat:@"%@",dic[@"end"]];
         cellModel.maxIndex = ([endIndex integerValue] == 0 ? @"" : endIndex);
         cellModel.rawTextFieldPlaceHolder = @"Raw Data Field";
         cellModel.rawData = [SafeStr(dic[@"raw_data"]) lowercaseString];

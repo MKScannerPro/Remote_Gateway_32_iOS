@@ -262,6 +262,7 @@ MKRGDeviceDataPageHeaderViewDelegate>
 - (void)updateStatus {
     [self.dataList removeAllObjects];
     [self.headerView setDataModel:self.headerModel];
+    [self.headerView updateTotalNumbers:0];
     [self.tableView reloadData];
     if (self.headerModel.isOn) {
         //打开
@@ -301,6 +302,7 @@ MKRGDeviceDataPageHeaderViewDelegate>
             if (self.isNeedRefresh) {
                 [self.tableView reloadData];
                 self.headerView.dataModel = self.headerModel;
+                [self.headerView updateTotalNumbers:self.dataList.count];
                 self.isNeedRefresh = NO;
             }
         }
@@ -345,7 +347,7 @@ MKRGDeviceDataPageHeaderViewDelegate>
 
 - (MKRGDeviceDataPageHeaderView *)headerView {
     if (!_headerView) {
-        _headerView = [[MKRGDeviceDataPageHeaderView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 150.f)];
+        _headerView = [[MKRGDeviceDataPageHeaderView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 175.f)];
         _headerView.delegate = self;
     }
     return _headerView;

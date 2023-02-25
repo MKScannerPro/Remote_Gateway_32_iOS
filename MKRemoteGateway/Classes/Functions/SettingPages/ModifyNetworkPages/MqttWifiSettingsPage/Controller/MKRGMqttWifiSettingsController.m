@@ -252,7 +252,6 @@ mk_textSwitchCellDelegate>
         return;
     }
     [[MKHudManager share] hide];
-    self.leftButton.enabled = YES;
     NSInteger result = [user[@"data"][@"result_code"] integerValue];
     self.leftButton.enabled = YES;
     if (result == 1) {
@@ -285,16 +284,20 @@ mk_textSwitchCellDelegate>
     [self.dataModel configDataWithSucBlock:^{
         @strongify(self);
         //先判断是否下载证书
-        if (((self.dataModel.eapType == 0 || self.dataModel.eapType == 1) && self.dataModel.verifyServer) || self.dataModel.eapType == 2) {
-            //TLS需要配置证书，PEAP-MSCHAPV2和TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才配置证书
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(receiveUpdateEAPCerts:)
-                                                         name:MKRGReceiveDeviceUpdateEapCertsResultNotification
-                                                       object:nil];
-            return;
+        if (self.dataModel.security == 1) {
+            if (((self.dataModel.eapType == 0 || self.dataModel.eapType == 1) && self.dataModel.verifyServer) || self.dataModel.eapType == 2) {
+                //TLS需要配置证书，PEAP-MSCHAPV2和TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才配置证书
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(receiveUpdateEAPCerts:)
+                                                             name:MKRGReceiveDeviceUpdateEapCertsResultNotification
+                                                           object:nil];
+                return;
+            }
         }
+        
         //不需要证书
         [[MKHudManager share] hide];
+        self.leftButton.enabled = YES;
         [self.view showCentralToast:@"setup succeed!"];
         [self performSelector:@selector(leftButtonMethod) withObject:nil afterDelay:0.5f];
     } failedBlock:^(NSError * _Nonnull error) {

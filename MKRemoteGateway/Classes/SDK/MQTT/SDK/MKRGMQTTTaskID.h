@@ -54,6 +54,7 @@ typedef NS_ENUM(NSInteger, mk_rg_serverOperationID) {
     mk_rg_server_taskReadDeviceUTCTimeOperation,                //读取当前UTC时间
     mk_rg_server_taskReadCommunicateTimeoutOperation,           //读取通信超时时间
     mk_rg_server_taskReadIndicatorLightStatusOperation,         //读取指示灯开关
+    mk_rg_server_taskReadOtaStatusOperation,                    //读取当前设备OTA状态
     mk_rg_server_taskReadBleAdvStatusOperation,                 //读取蓝牙广播状态
     mk_rg_server_taskReadWifiInfosOperation,                    //读取设备当前连接的wifi信息
     mk_rg_server_taskReadNetworkInfosOperation,                 //读取网络参数

@@ -80,6 +80,8 @@
 
 @property (nonatomic, strong)UIButton *scannerButton;
 
+@property (nonatomic, strong)UILabel *totalLabel;
+
 @property (nonatomic, strong)MKRGDeviceDataPageManageBleButton *manageBleButton;
 
 @end
@@ -93,6 +95,7 @@
         [self addSubview:self.scannerLabel];
         [self addSubview:self.scannerButton];
         [self addSubview:self.manageBleButton];
+        [self addSubview:self.totalLabel];
     }
     return self;
 }
@@ -122,6 +125,12 @@
         make.right.mas_equalTo(-15.f);
         make.top.mas_equalTo(self.scannerButton.mas_bottom).mas_offset(15.f);
         make.height.mas_equalTo(35.f);
+    }];
+    [self.totalLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(30.f);
+        make.right.mas_equalTo(-30.f);
+        make.top.mas_equalTo(self.manageBleButton.mas_bottom).mas_offset(10.f);
+        make.height.mas_equalTo(MKFont(14.f).lineHeight);
     }];
 }
 
@@ -155,6 +164,12 @@
     UIImage *image = (self.scannerButton.selected ? LOADICON(@"MKRemoteGateway", @"MKRGDeviceDataPageHeaderView", @"rg_switchSelectedIcon.png") : LOADICON(@"MKRemoteGateway", @"MKRGDeviceDataPageHeaderView", @"rg_switchUnselectedIcon.png"));
     [self.scannerButton setImage:image forState:UIControlStateNormal];
     self.manageBleButton.hidden = !_dataModel.isOn;
+    self.totalLabel.hidden = !_dataModel.isOn;
+}
+
+#pragma mark - public method
+- (void)updateTotalNumbers:(NSInteger)numbers {
+    self.totalLabel.text = [NSString stringWithFormat:@"Total %@ pieces of data",@(numbers)];
 }
 
 #pragma mark - getter
@@ -196,6 +211,17 @@
                    forControlEvents:UIControlEventTouchUpInside];
     }
     return _manageBleButton;
+}
+
+- (UILabel *)totalLabel {
+    if (!_totalLabel) {
+        _totalLabel = [[UILabel alloc] init];
+        _totalLabel.textColor = DEFAULT_TEXT_COLOR;
+        _totalLabel.textAlignment = NSTextAlignmentLeft;
+        _totalLabel.font = MKFont(14.f);
+        _totalLabel.text = @"Total 0 pieces of data";
+    }
+    return _totalLabel;
 }
 
 @end

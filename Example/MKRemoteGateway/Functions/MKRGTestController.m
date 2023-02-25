@@ -8,6 +8,10 @@
 
 #import "MKRGTestController.h"
 
+#import "Masonry.h"
+
+#import "MKCustomUIAdopter.h"
+
 #import "MKRGDeviceListController.h"
 
 @interface MKRGTestController ()
@@ -18,11 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.defaultTitle = @"测试页面";
-    // Do any additional setup after loading the view.
+    self.defaultTitle = @"RemoteGateway";
+    self.leftButton.hidden = YES;
+    UIButton *button = [MKCustomUIAdopter customButtonWithTitle:@"RemoteGateway"
+                                                         target:self
+                                                         action:@selector(pushRemoteGatewayPage)];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.width.mas_equalTo(150.f);
+        make.centerY.mas_equalTo(self.view.mas_centerY);
+        make.height.mas_equalTo(40.f);
+    }];
 }
 
-- (void)leftButtonMethod {
+- (void)pushRemoteGatewayPage {
     MKRGDeviceListController *vc = [[MKRGDeviceListController alloc] init];
     vc.connectServer = YES;
     [self.navigationController pushViewController:vc animated:YES];

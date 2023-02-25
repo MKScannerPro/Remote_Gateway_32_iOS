@@ -70,7 +70,7 @@
         self.domainID = returnData[@"data"][@"eap_id"];
         self.eapUserName = returnData[@"data"][@"eap_username"];
         self.eapPassword = returnData[@"data"][@"eap_passwd"];
-        self.verifyServer = ([returnData[@"data"][@"security_type"] integerValue] == 1);
+        self.verifyServer = ([returnData[@"data"][@"eap_verify_server"] integerValue] == 1);
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

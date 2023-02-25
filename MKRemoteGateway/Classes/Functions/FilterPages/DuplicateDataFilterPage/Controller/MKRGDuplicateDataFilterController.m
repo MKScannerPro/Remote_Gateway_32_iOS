@@ -16,6 +16,7 @@
 #import "MKBaseTableView.h"
 #import "UIView+MKAdd.h"
 #import "NSString+MKAdd.h"
+#import "UITableView+MKAdd.h"
 
 #import "MKHudManager.h"
 #import "MKTextButtonCell.h"
@@ -78,7 +79,7 @@ MKTextFieldCellDelegate>
         return self.section0List.count;
     }
     if (section == 1) {
-        return self.section1List.count;
+        return (self.dataModel.rule == 0 ? 0 : self.section1List.count);
     }
     return 0;
 }
@@ -109,6 +110,7 @@ MKTextFieldCellDelegate>
         self.dataModel.rule = dataListIndex;
         MKTextButtonCellModel *cellModel = self.section0List[0];
         cellModel.dataListIndex = dataListIndex;
+        [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
         return;
     }
 }

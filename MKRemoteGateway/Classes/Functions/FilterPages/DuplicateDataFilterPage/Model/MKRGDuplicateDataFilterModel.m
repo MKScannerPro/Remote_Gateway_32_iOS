@@ -40,6 +40,11 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        NSString *msg = [self checkMsg];
+        if (ValidStr(msg)) {
+            [self operationFailedBlockWithMsg:msg block:failedBlock];
+            return;
+        }
         if (![self configDuplicateDataFilter]) {
             [self operationFailedBlockWithMsg:@"Setup failed!" block:failedBlock];
             return;
@@ -87,6 +92,16 @@
                                                 userInfo:@{@"errorInfo":msg}];
         block(error);
     })
+}
+
+- (NSString *)checkMsg {
+    if (self.rule == 0) {
+        return @"";
+    }
+    if (!ValidStr(self.time) || [self.time integerValue] < 1 || [self.time integerValue] > 86400) {
+        return @"Params error";
+    }
+    return @"";
 }
 
 #pragma mark - getter
