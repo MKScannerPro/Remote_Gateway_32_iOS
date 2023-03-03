@@ -131,11 +131,20 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.configQueue, ^{
+        NSInteger status = [self readOTAState];
+        if (status == -1) {
+            [self operationFailedBlockWithMsg:@"Read OTA Status Error" block:failedBlock];
+            return;
+        }
+        if (status == 1) {
+            [self operationFailedBlockWithMsg:@"Device is busy now!" block:failedBlock];
+            return;
+        }
         if (![self configMqttInfos]) {
             [self operationFailedBlockWithMsg:@"Config Mqtt Infos Error" block:failedBlock];
             return;
         }
-        if (self.sslIsOn) {
+        if (self.connectMode > 1) {
             if (![self configMqttCerts]) {
                 [self operationFailedBlockWithMsg:@"Config Mqtt Certs Error" block:failedBlock];
                 return;
@@ -149,6 +158,18 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
 }
 
 #pragma mark - interface
+- (NSInteger)readOTAState {
+    __block NSInteger status = -1;
+    [MKRGMQTTInterface rg_readOtaStatusWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+        status = [returnData[@"data"][@"status"] integerValue];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return status;
+}
+
 - (BOOL)readMqttInfos {
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readMQTTParamsWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
@@ -163,7 +184,7 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
         self.keepAlive = [NSString stringWithFormat:@"%@",returnData[@"data"][@"keepalive"]];
         self.userName = returnData[@"data"][@"username"];
         self.password = returnData[@"data"][@"passwd"];
-        self.connectMode = [returnData[@"result"][@"security_type"] integerValue];
+        self.connectMode = [returnData[@"data"][@"security_type"] integerValue];
         self.sslIsOn = YES;
         if (self.connectMode == 0) {
             //TCP

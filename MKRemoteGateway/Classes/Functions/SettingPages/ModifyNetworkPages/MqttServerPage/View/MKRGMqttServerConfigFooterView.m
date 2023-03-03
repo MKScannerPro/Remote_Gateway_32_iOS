@@ -25,7 +25,7 @@
 
 static CGFloat const buttonHeight = 30.f;
 static CGFloat const settingViewHeight = 130.f;
-static CGFloat const defaultScrollViewHeight = 300.f;
+static CGFloat const defaultScrollViewHeight = 350.f;
 
 @interface MKRGMqttServerConfigFooterView ()<UIScrollViewDelegate,
 MKMQTTGeneralParamsViewDelegate,

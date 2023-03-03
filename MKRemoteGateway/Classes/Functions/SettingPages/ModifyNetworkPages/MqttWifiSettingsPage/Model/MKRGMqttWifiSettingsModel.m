@@ -38,6 +38,15 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        NSInteger status = [self readOTAState];
+        if (status == -1) {
+            [self operationFailedBlockWithMsg:@"Read OTA Status Error" block:failedBlock];
+            return;
+        }
+        if (status == 1) {
+            [self operationFailedBlockWithMsg:@"Device is busy now!" block:failedBlock];
+            return;
+        }
         if (![self configWifiInfos]) {
             [self operationFailedBlockWithMsg:@"Config Wifi Infos Error" block:failedBlock];
             return;
@@ -59,6 +68,18 @@
 }
 
 #pragma mark - interface
+- (NSInteger)readOTAState {
+    __block NSInteger status = -1;
+    [MKRGMQTTInterface rg_readOtaStatusWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+        status = [returnData[@"data"][@"status"] integerValue];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return status;
+}
+
 - (BOOL)readWifiInfos {
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readWifiInfosWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {

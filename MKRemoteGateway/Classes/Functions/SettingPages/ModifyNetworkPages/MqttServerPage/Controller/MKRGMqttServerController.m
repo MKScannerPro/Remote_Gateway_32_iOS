@@ -695,7 +695,7 @@ MKRGImportServerControllerDelegate>
 
 - (UIView *)footerView {
     if (!_footerView) {
-        _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 450.f)];
+        _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 500.f)];
         _footerView.backgroundColor = COLOR_WHITE_MACROS;
         [_footerView addSubview:self.sslParamsView];
     }

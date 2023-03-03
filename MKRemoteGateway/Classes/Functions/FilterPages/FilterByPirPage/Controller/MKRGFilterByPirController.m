@@ -275,11 +275,13 @@ MKRGFilterBeaconCellDelegate>
 - (void)loadSection2Datas {
     MKRGFilterBeaconCellModel *cellModel1 = [[MKRGFilterBeaconCellModel alloc] init];
     cellModel1.index = 0;
+    cellModel1.msg = @"Major";
     cellModel1.minValue = self.dataModel.minMajor;
     cellModel1.maxValue = self.dataModel.maxMajor;
     [self.section2List addObject:cellModel1];
     
     MKRGFilterBeaconCellModel *cellModel2 = [[MKRGFilterBeaconCellModel alloc] init];
+    cellModel2.msg = @"Minor";
     cellModel2.index = 1;
     cellModel2.minValue = self.dataModel.minMinor;
     cellModel2.maxValue = self.dataModel.maxMinor;
