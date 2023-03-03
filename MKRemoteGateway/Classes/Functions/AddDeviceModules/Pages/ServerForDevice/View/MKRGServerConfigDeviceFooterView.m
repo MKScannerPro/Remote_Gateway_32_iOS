@@ -14,11 +14,11 @@
 #import "NSString+MKAdd.h"
 
 #import "MKMQTTGeneralParamsView.h"
+#import "MKMQTTUserCredentialsView.h"
 
 #import "MKRGMQTTSSLForDeviceView.h"
 #import "MKRGServerConfigDeviceSettingView.h"
 #import "MKRGMQTTLWTForDeviceView.h"
-#import "MKRGUserCredentialsView.h"
 
 @implementation MKRGServerConfigDeviceFooterViewModel
 @end
@@ -29,7 +29,7 @@ static CGFloat const defaultScrollViewHeight = 300.f;
 
 @interface MKRGServerConfigDeviceFooterView ()<UIScrollViewDelegate,
 MKMQTTGeneralParamsViewDelegate,
-MKRGUserCredentialsViewDelegate,
+MKMQTTUserCredentialsViewDelegate,
 MKRGMQTTSSLForDeviceViewDelegate,
 MKRGServerConfigDeviceSettingViewDelegate,
 MKRGMQTTLWTForDeviceViewDelegate>
@@ -50,7 +50,7 @@ MKRGMQTTLWTForDeviceViewDelegate>
 
 @property (nonatomic, strong)MKMQTTGeneralParamsView *generalView;
 
-@property (nonatomic, strong)MKRGUserCredentialsView *credentialsView;
+@property (nonatomic, strong)MKMQTTUserCredentialsView *credentialsView;
 
 @property (nonatomic, strong)MKRGMQTTSSLForDeviceView *sslView;
 
@@ -171,15 +171,14 @@ MKRGMQTTLWTForDeviceViewDelegate>
     }
 }
 
-#pragma mark - MKRGUserCredentialsViewDelegate
-
-- (void)rg_mqtt_userCredentials_userNameChanged:(NSString *)userName {
+#pragma mark - MKMQTTUserCredentialsViewDelegate
+- (void)mk_mqtt_userCredentials_userNameChanged:(NSString *)userName {
     if ([self.delegate respondsToSelector:@selector(rg_mqtt_serverForDevice_textFieldValueChanged:textID:)]) {
         [self.delegate rg_mqtt_serverForDevice_textFieldValueChanged:userName textID:1];
     }
 }
 
-- (void)rg_mqtt_userCredentials_passwordChanged:(NSString *)password {
+- (void)mk_mqtt_userCredentials_passwordChanged:(NSString *)password {
     if ([self.delegate respondsToSelector:@selector(rg_mqtt_serverForDevice_textFieldValueChanged:textID:)]) {
         [self.delegate rg_mqtt_serverForDevice_textFieldValueChanged:password textID:2];
     }
@@ -342,7 +341,7 @@ MKRGMQTTLWTForDeviceViewDelegate>
     generalModel.keepAlive = _dataModel.keepAlive;
     self.generalView.dataModel = generalModel;
     
-    MKRGUserCredentialsViewModel *credentialsViewModel = [[MKRGUserCredentialsViewModel alloc] init];
+    MKMQTTUserCredentialsViewModel *credentialsViewModel = [[MKMQTTUserCredentialsViewModel alloc] init];
     credentialsViewModel.userName = _dataModel.userName;
     credentialsViewModel.password = _dataModel.password;
     self.credentialsView.dataModel = credentialsViewModel;
@@ -482,9 +481,9 @@ MKRGMQTTLWTForDeviceViewDelegate>
     return _credentialsButton;
 }
 
-- (MKRGUserCredentialsView *)credentialsView {
+- (MKMQTTUserCredentialsView *)credentialsView {
     if (!_credentialsView) {
-        _credentialsView = [[MKRGUserCredentialsView alloc] init];
+        _credentialsView = [[MKMQTTUserCredentialsView alloc] init];
         _credentialsView.delegate = self;
     }
     return _credentialsView;

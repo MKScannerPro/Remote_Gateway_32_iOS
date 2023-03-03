@@ -179,8 +179,8 @@ MKTextButtonCellDelegate>
         cellModel.msg = @"Condition C";
     }
     cellModel.dataTypePlaceHolder = @"Data Type";
-    cellModel.minTextFieldPlaceHolder = @"00-29";
-    cellModel.maxTextFieldPlaceHolder = @"00-29";
+    cellModel.minTextFieldPlaceHolder = @"1-29";
+    cellModel.maxTextFieldPlaceHolder = @"1-29";
     cellModel.rawTextFieldPlaceHolder = @"Raw Data Field";
     cellModel.index = cellModelIndex;
     [self.section1List addObject:cellModel];

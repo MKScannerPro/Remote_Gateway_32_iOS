@@ -62,6 +62,14 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'Expand' do |ss|
+    
+    ss.subspec 'BleBaseController' do |sss|
+      
+      sss.source_files = 'MKRemoteGateway/Classes/Expand/BleBaseController/**'
+    
+    
+      sss.dependency 'MKRemoteGateway/SDK/BLE'
+    end
   
     ss.subspec 'BaseController' do |sss|
       

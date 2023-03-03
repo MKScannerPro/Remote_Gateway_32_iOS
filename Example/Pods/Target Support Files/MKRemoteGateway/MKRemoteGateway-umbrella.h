@@ -14,6 +14,7 @@
 #import "MKRGDeviceModel.h"
 #import "MKRGDeviceModeManager.h"
 #import "MKRGBaseViewController.h"
+#import "MKRGBleBaseController.h"
 #import "MKRGDeviceDatabaseManager.h"
 #import "MKRGExcelCell.h"
 #import "MKRGExcelDataManager.h"

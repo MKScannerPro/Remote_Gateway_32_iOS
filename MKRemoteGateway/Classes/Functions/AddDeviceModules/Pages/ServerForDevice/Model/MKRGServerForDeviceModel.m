@@ -48,10 +48,10 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
     if (!ValidStr(self.keepAlive) || [self.keepAlive integerValue] < 10 || [self.keepAlive integerValue] > 120) {
         return @"KeepAlive error";
     }
-    if (self.userName.length > 128 || (ValidStr(self.userName) && ![self.userName isAsciiString])) {
+    if (self.userName.length > 256 || (ValidStr(self.userName) && ![self.userName isAsciiString])) {
         return @"UserName error";
     }
-    if (self.password.length > 128 || (ValidStr(self.password) && ![self.password isAsciiString])) {
+    if (self.password.length > 256 || (ValidStr(self.password) && ![self.password isAsciiString])) {
         return @"Password error";
     }
     if (self.sslIsOn) {

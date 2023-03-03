@@ -375,7 +375,6 @@ MKRGImportServerControllerDelegate>
     [[MKHudManager share] hide];
     self.leftButton.enabled = YES;
     NSInteger result = [user[@"data"][@"result_code"] integerValue];
-    self.leftButton.enabled = YES;
     if (result == 1) {
         [self.view showCentralToast:@"setup succeed!"];
         [self performSelector:@selector(leftButtonMethod) withObject:nil afterDelay:0.5f];
@@ -427,6 +426,7 @@ MKRGImportServerControllerDelegate>
         @strongify(self);
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"setup failed!"];
+        self.leftButton.enabled = YES;
     }];
 }
 
@@ -505,7 +505,12 @@ MKRGImportServerControllerDelegate>
 }
 
 - (void)clearAllParams {
-    [self.dataModel updateValue:[[MKRGMqttServerModel alloc] init]];
+    MKRGMqttServerModel *model = [[MKRGMqttServerModel alloc] init];
+    model.cleanSession = YES;
+    model.lwtStatus = YES;
+    model.lwtQos = 1;
+    
+    [self.dataModel updateValue:model];
     [self.section0List removeAllObjects];
     [self.section1List removeAllObjects];
     [self.sectionHeaderList removeAllObjects];

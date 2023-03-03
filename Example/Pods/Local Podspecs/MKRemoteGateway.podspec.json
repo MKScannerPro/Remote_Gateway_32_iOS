@@ -72,6 +72,15 @@
       },
       "subspecs": [
         {
+          "name": "BleBaseController",
+          "source_files": "MKRemoteGateway/Classes/Expand/BleBaseController/**",
+          "dependencies": {
+            "MKRemoteGateway/SDK/BLE": [
+
+            ]
+          }
+        },
+        {
           "name": "BaseController",
           "source_files": "MKRemoteGateway/Classes/Expand/BaseController/**",
           "dependencies": {

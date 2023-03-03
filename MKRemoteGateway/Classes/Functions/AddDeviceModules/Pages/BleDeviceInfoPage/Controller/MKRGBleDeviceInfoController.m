@@ -33,6 +33,7 @@
 
 - (void)dealloc {
     NSLog(@"MKRGBleDeviceInfoController销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {

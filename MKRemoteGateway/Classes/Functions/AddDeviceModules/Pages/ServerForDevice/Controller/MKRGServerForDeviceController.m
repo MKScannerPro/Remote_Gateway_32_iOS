@@ -597,7 +597,6 @@ MKRGImportServerControllerDelegate>
     cellModel2.textFieldType = mk_normal;
     cellModel2.textFieldValue = self.dataModel.publishTopic;
     cellModel2.maxLength = 128;
-    cellModel2.noteMsg = @"Note: Input your topics to communicate with the device or set the topics to empty.";
     [self.section1List addObject:cellModel2];
 }
 

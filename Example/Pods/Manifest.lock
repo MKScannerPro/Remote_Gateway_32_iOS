@@ -469,6 +469,7 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/Expand/BaseController (= 0.0.1)
+    - MKRemoteGateway/Expand/BleBaseController (= 0.0.1)
     - MKRemoteGateway/Expand/DatabaseManager (= 0.0.1)
     - MKRemoteGateway/Expand/ExcelManager (= 0.0.1)
     - MKRemoteGateway/Expand/ImportServerPage (= 0.0.1)
@@ -478,6 +479,10 @@ PODS:
     - MKCustomUIModule
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/SDK/MQTT
+  - MKRemoteGateway/Expand/BleBaseController (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKRemoteGateway/SDK/BLE
   - MKRemoteGateway/Expand/DatabaseManager (0.0.1):
     - FMDB
     - MKBaseModuleLibrary
@@ -2022,7 +2027,7 @@ SPEC CHECKSUMS:
   MKBaseModuleLibrary: 6de43aeeb519d1c5f3aa94ebaffe8b3a57351312
   MKBaseMQTTModule: b3a5c4776b60d5c395da4fd7019fc1cf64ec48a6
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKRemoteGateway: 7abe244c86d2f6be45b51321a7a84bf7e54cbece
+  MKRemoteGateway: 64712cfbcb2d04108c47e0ff1f1c1cd8ec2afe91
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
@@ -2031,4 +2036,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9f6ff320323f6926e99ccaf97a5ef4ec964d202a
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
