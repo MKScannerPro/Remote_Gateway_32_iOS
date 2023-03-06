@@ -26,6 +26,10 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        if (![self validParams]) {
+            [self operationFailedBlockWithMsg:@"Params error" block:failedBlock];
+            return;
+        }
         NSInteger status = [self readOTAState];
         if (status == -1) {
             [self operationFailedBlockWithMsg:@"Read OTA Status Error" block:failedBlock];
@@ -60,7 +64,7 @@
 
 - (BOOL)startOTA {
     __block BOOL success = NO;
-    [MKRGMQTTInterface rg_configOTAHost:self.host port:[self.port integerValue] filePath:self.filePath macAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+    [MKRGMQTTInterface rg_configOTAWithFilePath:self.filePath macAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
@@ -71,6 +75,12 @@
 }
 
 #pragma mark - private method
+- (BOOL)validParams {
+    if (!ValidStr(self.filePath) || self.filePath.length > 256) {
+        return NO;
+    }
+    return YES;
+}
 
 - (void)operationFailedBlockWithMsg:(NSString *)msg block:(void (^)(NSError *error))block {
     moko_dispatch_main_safe(^{

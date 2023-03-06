@@ -272,30 +272,18 @@ MKRGImportServerControllerDelegate>
         return;
     }
     if (textID == 7) {
-        //ssl host
-        self.dataModel.sslHost = text;
-        self.sslParamsModel.sslHost = text;
-        return;
-    }
-    if (textID == 8) {
-        //ssl port
-        self.dataModel.sslPort = text;
-        self.sslParamsModel.sslPort = text;
-        return;
-    }
-    if (textID == 9) {
         //CA File Path
         self.dataModel.caFilePath = text;
         self.sslParamsModel.caFilePath = text;
         return;
     }
-    if (textID == 10) {
+    if (textID == 8) {
         //Client Key File
         self.dataModel.clientKeyPath = text;
         self.sslParamsModel.clientKeyPath = text;
         return;
     }
-    if (textID == 11) {
+    if (textID == 9) {
         //Client Cert  File
         self.dataModel.clientCertPath = text;
         self.sslParamsModel.clientCertPath = text;

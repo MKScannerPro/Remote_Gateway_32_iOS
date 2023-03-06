@@ -136,7 +136,7 @@
         _noteLabel.textAlignment = NSTextAlignmentLeft;
         _noteLabel.font = MKFont(13.f);
         _noteLabel.textColor = UIColorFromRGB(0xcccccc);
-        _noteLabel.text = @"This value defines the time how long the gateway disconnect from BLE device after it doesn't get any message from the server. A value of 0 means that the gateway will not disconnect the Beacon devices.";
+        _noteLabel.text = @"If the gateway doesn't get any downlink message from the cloud in the timeout, it will automatically disconnect from the Beacon.  A value of 0 means that no automatic disconnection.";
         _noteLabel.numberOfLines = 0;
     }
     return _noteLabel;

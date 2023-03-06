@@ -25,7 +25,7 @@
 
 static CGFloat const buttonHeight = 30.f;
 static CGFloat const settingViewHeight = 130.f;
-static CGFloat const defaultScrollViewHeight = 350.f;
+static CGFloat const defaultScrollViewHeight = 320.f;
 
 @interface MKRGMqttServerConfigFooterView ()<UIScrollViewDelegate,
 MKMQTTGeneralParamsViewDelegate,
@@ -200,7 +200,7 @@ MKRGMqttServerLwtViewDelegate>
 }
 
 /// 用户输入事件
-/// @param index 0:Host         1:Port         2:CA File Path     3:Client Key File           4:Client Cert  File
+/// @param index 0:CA File Path     1:Client Key File           2:Client Cert  File
 /// @param value value
 - (void)rg_mqtt_sslParams_modifyDevice_textFieldValueChanged:(NSInteger)index value:(NSString *)value {
     NSInteger tempIndex = 0;
@@ -210,10 +210,6 @@ MKRGMqttServerLwtViewDelegate>
         tempIndex = 8;
     }else if (index == 2) {
         tempIndex = 9;
-    }else if (index == 3) {
-        tempIndex = 10;
-    }else if (index == 4) {
-        tempIndex = 11;
     }
     if ([self.delegate respondsToSelector:@selector(rg_mqtt_serverForDevice_textFieldValueChanged:textID:)]) {
         [self.delegate rg_mqtt_serverForDevice_textFieldValueChanged:value textID:tempIndex];

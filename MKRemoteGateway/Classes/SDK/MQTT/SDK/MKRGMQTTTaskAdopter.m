@@ -215,6 +215,9 @@
     }else if (msgID == 1200) {
         //网关断开指定mac地址的蓝牙设备
         operationID = mk_rg_server_taskDisconnectNormalBleDeviceWithMacOperation;
+    }else if (msgID == 1202) {
+        //指定BXP-Button设备DFU升级
+        operationID = mk_rg_server_taskStartBXPButtonDfuWithMacOperation;
     }
     return [self dataParserGetDataSuccess:json operationID:operationID];
 }

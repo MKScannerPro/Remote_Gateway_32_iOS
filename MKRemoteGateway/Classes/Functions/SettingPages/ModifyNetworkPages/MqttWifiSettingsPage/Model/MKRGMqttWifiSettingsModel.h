@@ -39,19 +39,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)BOOL verifyServer;
 
 /// security为personal无此参数
-@property (nonatomic, copy)NSString *host;
-
-/// security为personal无此参数
-@property (nonatomic, copy)NSString *port;
-
-/// security为personal无此参数
-@property (nonatomic, copy)NSString *caFileName;
+@property (nonatomic, copy)NSString *caFilePath;
 
 /// eapType为TLS有效
-@property (nonatomic, copy)NSString *clientKeyName;
+@property (nonatomic, copy)NSString *clientKeyPath;
 
 /// eapType为TLS有效
-@property (nonatomic, copy)NSString *clientCertName;
+@property (nonatomic, copy)NSString *clientCertPath;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 

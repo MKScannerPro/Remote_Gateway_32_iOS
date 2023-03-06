@@ -1339,9 +1339,37 @@ PODS:
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (= 0.0.1)
     - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (= 0.0.1)
     - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage (= 0.0.1)
     - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage (= 0.0.1)
+    - MKRemoteGateway/SDK
+    - MLInputDodger
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKRemoteGateway/CTMediator
+    - MKRemoteGateway/DeviceModel
+    - MKRemoteGateway/Expand
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (= 0.0.1)
+    - MKRemoteGateway/SDK
+    - MLInputDodger
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKRemoteGateway/CTMediator
+    - MKRemoteGateway/DeviceModel
+    - MKRemoteGateway/Expand
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model
+    - MKRemoteGateway/SDK
+    - MLInputDodger
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKRemoteGateway/CTMediator
+    - MKRemoteGateway/DeviceModel
+    - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
   - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (0.0.1):
@@ -1351,9 +1379,20 @@ PODS:
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
     - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (= 0.0.1)
     - MKRemoteGateway/SDK
     - MLInputDodger
   - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKRemoteGateway/CTMediator
+    - MKRemoteGateway/DeviceModel
+    - MKRemoteGateway/Expand
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage
+    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View
+    - MKRemoteGateway/SDK
+    - MLInputDodger
+  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (0.0.1):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -2027,7 +2066,7 @@ SPEC CHECKSUMS:
   MKBaseModuleLibrary: 6de43aeeb519d1c5f3aa94ebaffe8b3a57351312
   MKBaseMQTTModule: b3a5c4776b60d5c395da4fd7019fc1cf64ec48a6
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKRemoteGateway: 64712cfbcb2d04108c47e0ff1f1c1cd8ec2afe91
+  MKRemoteGateway: 0d099396d4eeeb1f8b7199852f6c250d99215632
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef

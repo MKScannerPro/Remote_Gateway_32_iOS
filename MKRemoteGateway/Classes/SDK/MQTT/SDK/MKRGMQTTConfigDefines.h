@@ -137,19 +137,13 @@ typedef NS_ENUM(NSInteger, mk_rg_duplicateDataFilter) {
 @protocol mk_rg_mqttModifyWifiEapCertProtocol <NSObject>
 
 /// security为personal无此参数
-@property (nonatomic, copy)NSString *host;
-
-/// security为personal无此参数
-@property (nonatomic, copy)NSString *port;
-
-/// security为personal无此参数
-@property (nonatomic, copy)NSString *caFileName;
+@property (nonatomic, copy)NSString *caFilePath;
 
 /// eapType为TLS有效
-@property (nonatomic, copy)NSString *clientKeyName;
+@property (nonatomic, copy)NSString *clientKeyPath;
 
 /// eapType为TLS有效
-@property (nonatomic, copy)NSString *clientCertName;
+@property (nonatomic, copy)NSString *clientCertPath;
 
 @end
 
@@ -226,14 +220,13 @@ typedef NS_ENUM(NSInteger, mk_rg_duplicateDataFilter) {
 
 @protocol mk_rg_modifyMqttServerCertsProtocol <NSObject>
 
-@property (nonatomic, copy)NSString *sslHost;
-
-@property (nonatomic, copy)NSString *sslPort;
-
+/// 0-256 Characters
 @property (nonatomic, copy)NSString *caFilePath;
 
+/// 0-256 Characters
 @property (nonatomic, copy)NSString *clientKeyPath;
 
+/// 0-256 Characters
 @property (nonatomic, copy)NSString *clientCertPath;
 
 @end

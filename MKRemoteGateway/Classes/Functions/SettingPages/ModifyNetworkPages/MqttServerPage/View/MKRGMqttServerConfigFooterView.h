@@ -27,10 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 0:TCP    1:CA signed server certificate     2:CA certificate     3:Self signed certificates
 @property (nonatomic, assign)NSInteger certificate;
 
-@property (nonatomic, copy)NSString *sslHost;
-
-@property (nonatomic, copy)NSString *sslPort;
-
 @property (nonatomic, copy)NSString *caFilePath;
 
 @property (nonatomic, copy)NSString *clientKeyPath;
@@ -58,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 输入框内容发生了改变
 /// @param text 最新的输入框内容
-/// @param textID 0:keepAlive    1:userName     2:password    3:deviceID   4:ntpURL   5:lwtTopic   6:lwtPayload   7:ssl host   8:ssl port         9:CA File Path     10:Client Key File           11:Client Cert  File
+/// @param textID 0:keepAlive    1:userName     2:password    3:deviceID   4:ntpURL   5:lwtTopic   6:lwtPayload   7:CA File Path     8:Client Key File           9:Client Cert  File
 - (void)rg_mqtt_serverForDevice_textFieldValueChanged:(NSString *)text textID:(NSInteger)textID;
 
 /// Qos发生改变

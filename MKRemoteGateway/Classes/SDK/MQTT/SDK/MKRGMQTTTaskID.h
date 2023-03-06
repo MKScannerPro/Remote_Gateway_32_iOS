@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, mk_rg_serverOperationID) {
     mk_rg_server_taskConnectBXPButtonWithMacOperation,      //连接指定mac地址的BXP-Button设备
     
     mk_rg_server_taskDisconnectNormalBleDeviceWithMacOperation, //网关断开指定mac地址的蓝牙设备
+    mk_rg_server_taskStartBXPButtonDfuWithMacOperation,         //指定BXP-Button设备DFU升级
     
     mk_rg_server_taskConnectNormalBleDeviceWithMacOperation,    //网关连接指定mac地址的蓝牙设备
     

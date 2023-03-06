@@ -146,33 +146,18 @@
             return @"password error";
         }
         if (self.verifyServer) {
-            if (!ValidStr(self.caFileName)) {
-                return @"CA File cannot be empty.";
-            }
-            if (!ValidStr(self.host) || self.host.length > 64) {
-                return @"Host error";
-            }
-            if (!ValidStr(self.port) || [self.port integerValue] < 1 || [self.port integerValue] > 65535) {
-                return @"Port error";
+            if (!ValidStr(self.caFilePath)) {
+                return @"CA File Path Error";
             }
         }
     }
     if (self.eapType == 2) {
         //TLS
+        if (!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath)) {
+            return @"File Path Error";
+        }
         if (self.domainID.length > 64) {
             return @"domain ID error";
-        }
-        if (!ValidStr(self.host) || self.host.length > 64) {
-            return @"Host error";
-        }
-        if (!ValidStr(self.port) || [self.port integerValue] < 1 || [self.port integerValue] > 65535) {
-            return @"Port error";
-        }
-        if (!ValidStr(self.caFileName)) {
-            return @"CA File cannot be empty.";
-        }
-        if (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName)) {
-            return @"Client File cannot be empty.";
         }
     }
     return @"";

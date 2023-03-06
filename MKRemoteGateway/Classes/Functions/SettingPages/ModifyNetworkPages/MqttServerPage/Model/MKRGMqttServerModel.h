@@ -57,11 +57,6 @@ mk_rg_modifyMqttServerCertsProtocol>
 @property (nonatomic, copy)NSString *lwtPayload;
 
 
-
-@property (nonatomic, copy)NSString *sslHost;
-
-@property (nonatomic, copy)NSString *sslPort;
-
 @property (nonatomic, copy)NSString *caFilePath;
 
 @property (nonatomic, copy)NSString *clientKeyPath;

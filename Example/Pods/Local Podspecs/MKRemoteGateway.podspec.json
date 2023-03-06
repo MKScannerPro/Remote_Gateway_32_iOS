@@ -794,11 +794,41 @@
           "name": "ManageBleModules",
           "subspecs": [
             {
+              "name": "ButtonDFUPage",
+              "subspecs": [
+                {
+                  "name": "Controller",
+                  "source_files": "MKRemoteGateway/Classes/Functions/ManageBleModules/ButtonDFUPage/Controller/**",
+                  "dependencies": {
+                    "MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model": [
+
+                    ]
+                  }
+                },
+                {
+                  "name": "Model",
+                  "source_files": "MKRemoteGateway/Classes/Functions/ManageBleModules/ButtonDFUPage/Model/**"
+                }
+              ]
+            },
+            {
               "name": "BXPButtonPage",
               "subspecs": [
                 {
                   "name": "Controller",
-                  "source_files": "MKRemoteGateway/Classes/Functions/ManageBleModules/BXPButtonPage/Controller/**"
+                  "source_files": "MKRemoteGateway/Classes/Functions/ManageBleModules/BXPButtonPage/Controller/**",
+                  "dependencies": {
+                    "MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View": [
+
+                    ],
+                    "MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage": [
+
+                    ]
+                  }
+                },
+                {
+                  "name": "View",
+                  "source_files": "MKRemoteGateway/Classes/Functions/ManageBleModules/BXPButtonPage/View/**"
                 }
               ]
             },

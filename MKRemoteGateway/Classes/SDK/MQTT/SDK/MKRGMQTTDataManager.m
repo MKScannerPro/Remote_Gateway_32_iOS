@@ -28,6 +28,9 @@ NSString *const MKRGReceiveGatewayDisconnectBXPButtonNotification = @"MKRGReceiv
 NSString *const MKRGReceiveGatewayDisconnectDeviceNotification = @"MKRGReceiveGatewayDisconnectDeviceNotification";
 NSString *const MKRGReceiveGatewayConnectedDeviceDatasNotification = @"MKRGReceiveGatewayConnectedDeviceDatasNotification";
 
+NSString *const MKRGReceiveBxpButtonDfuProgressNotification = @"MKRGReceiveBxpButtonDfuProgressNotification";
+NSString *const MKRGReceiveBxpButtonDfuResultNotification = @"MKRGReceiveBxpButtonDfuResultNotification";
+
 NSString *const MKRGReceiveDeviceOfflineNotification = @"MKRGReceiveDeviceOfflineNotification";
 
 
@@ -124,6 +127,20 @@ static dispatch_once_t onceToken;
     if (msgID == 3108) {
         //网关与已连接的BXP-Button设备断开了链接，非主动断开
         [[NSNotificationCenter defaultCenter] postNotificationName:MKRGReceiveGatewayDisconnectBXPButtonNotification
+                                                            object:nil
+                                                          userInfo:data];
+        return;
+    }
+    if (msgID == 3203) {
+        //BXP-Button升级进度
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKRGReceiveBxpButtonDfuProgressNotification
+                                                            object:nil
+                                                          userInfo:data];
+        return;
+    }
+    if (msgID == 3204) {
+        //BXP-Button升级结果
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKRGReceiveBxpButtonDfuResultNotification
                                                             object:nil
                                                           userInfo:data];
         return;

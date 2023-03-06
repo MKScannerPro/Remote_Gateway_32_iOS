@@ -537,9 +537,28 @@ TODO: Add long description of the pod here.
     
     ss.subspec 'ManageBleModules' do |sss|
       
+      sss.subspec 'ButtonDFUPage' do |ssss|
+          ssss.subspec 'Controller' do |sssss|
+              sssss.source_files = 'MKRemoteGateway/Classes/Functions/ManageBleModules/ButtonDFUPage/Controller/**'
+              
+              sssss.dependency 'MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model'
+          end
+          
+          ssss.subspec 'Model' do |sssss|
+              sssss.source_files = 'MKRemoteGateway/Classes/Functions/ManageBleModules/ButtonDFUPage/Model/**'
+          end
+      end
+      
       sss.subspec 'BXPButtonPage' do |ssss|
           ssss.subspec 'Controller' do |sssss|
               sssss.source_files = 'MKRemoteGateway/Classes/Functions/ManageBleModules/BXPButtonPage/Controller/**'
+              
+              sssss.dependency 'MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View'
+              
+              sssss.dependency 'MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage'
+          end
+          ssss.subspec 'View' do |sssss|
+              sssss.source_files = 'MKRemoteGateway/Classes/Functions/ManageBleModules/BXPButtonPage/View/**'
           end
       end
       

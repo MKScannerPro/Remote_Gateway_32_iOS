@@ -132,21 +132,17 @@
                                failedBlock:failedBlock];
 }
 
-+ (void)rg_configOTAHost:(NSString *)host
-                    port:(NSInteger)port
-                filePath:(NSString *)filePath
-              macAddress:(NSString *)macAddress
-                   topic:(NSString *)topic
-                sucBlock:(void (^)(id returnData))sucBlock
-             failedBlock:(void (^)(NSError *error))failedBlock {
++ (void)rg_configOTAWithFilePath:(NSString *)filePath
+                      macAddress:(NSString *)macAddress
+                           topic:(NSString *)topic
+                        sucBlock:(void (^)(id returnData))sucBlock
+                     failedBlock:(void (^)(NSError *error))failedBlock {
     NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
     if (ValidStr(checkMsg)) {
         [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
         return;
     }
-    if (!ValidStr(host) || host.length > 64 || ![host isAsciiString]
-        || port < 0 || port > 65535
-        || !ValidStr(filePath) || filePath.length > 100 || ![filePath isAsciiString]) {
+    if (!ValidStr(filePath) || filePath.length > 256 || ![filePath isAsciiString]) {
         [self operationFailedBlockWithMsg:@"Params error" failedBlock:failedBlock];
         return;
     }
@@ -156,9 +152,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"host":host,
-                @"port":@(port),
-                @"file":filePath
+                @"firmware_url":filePath
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -417,11 +411,9 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"host":SafeStr(protocol.host),
-                @"port":@([protocol.port integerValue]),
-                @"ca_file":SafeStr(protocol.caFileName),
-                @"client_cert_file":SafeStr(protocol.clientCertName),
-                @"client_key_file":SafeStr(protocol.clientKeyName),
+                @"ca_url":SafeStr(protocol.caFilePath),
+                @"client_cert_url":SafeStr(protocol.clientCertPath),
+                @"client_key_url":SafeStr(protocol.clientKeyPath),
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -533,11 +525,9 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"host":SafeStr(protocol.sslHost),
-                @"port":@([protocol.sslPort integerValue]),
-                @"ca_file":SafeStr(protocol.caFilePath),
-                @"client_cert_file":SafeStr(protocol.clientCertPath),
-                @"client_key_file":SafeStr(protocol.clientKeyPath),
+                @"ca_url":SafeStr(protocol.caFilePath),
+                @"client_cert_url":SafeStr(protocol.clientCertPath),
+                @"client_key_url":SafeStr(protocol.clientKeyPath),
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -1318,6 +1308,46 @@
                                      topic:topic
                                 macAddress:macAddress
                                     taskID:mk_rg_server_taskDisconnectNormalBleDeviceWithMacOperation
+                                   timeout:50
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
+}
+
++ (void)rg_startBXPButtonDfuWithFirmwareUrl:(NSString *)firmwareUrl
+                                    dataUrl:(NSString *)dataUrl
+                                     bleMac:(NSString *)bleMacAddress
+                                 macAddress:(NSString *)macAddress
+                                      topic:(NSString *)topic
+                                   sucBlock:(void (^)(id returnData))sucBlock
+                                failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
+    if (ValidStr(checkMsg)) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    if (!ValidStr(bleMacAddress) || bleMacAddress.length != 12 || ![bleMacAddress regularExpressions:isHexadecimal]) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    if (!firmwareUrl || firmwareUrl.length > 256 || !dataUrl || dataUrl.length > 256) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    NSDictionary *data = @{
+        @"msg_id":@(1202),
+        @"device_info":@{
+                @"mac":macAddress
+        },
+        @"data":@{
+            @"mac":bleMacAddress,
+            @"firmware_url":SafeStr(firmwareUrl),
+            @"init_data_url":SafeStr(dataUrl),
+        }
+    };
+    [[MKRGMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_rg_server_taskStartBXPButtonDfuWithMacOperation
                                    timeout:50
                                   sucBlock:sucBlock
                                failedBlock:failedBlock];
@@ -2520,16 +2550,10 @@
     if (![protocol conformsToProtocol:@protocol(mk_rg_mqttModifyWifiEapCertProtocol)]) {
         return NO;
     }
-    if (!ValidStr(protocol.host) || protocol.host.length > 64) {
+    if (!ValidStr(protocol.caFilePath) && !ValidStr(protocol.clientKeyPath) && !ValidStr(protocol.clientCertPath)) {
         return NO;
     }
-    if (!ValidStr(protocol.port) || [protocol.port integerValue] < 1 || [protocol.port integerValue] > 65535) {
-        return NO;
-    }
-    if (!ValidStr(protocol.caFileName)) {
-        return NO;
-    }
-    if (protocol.clientKeyName.length > 100 || protocol.clientCertName.length > 100) {
+    if (protocol.clientKeyPath.length > 256 || protocol.clientCertPath.length > 256 || protocol.caFilePath.length > 256) {
         return NO;
     }
     return YES;
@@ -2609,16 +2633,10 @@
     if (![protocol conformsToProtocol:@protocol(mk_rg_modifyMqttServerCertsProtocol)]) {
         return NO;
     }
-    if (!ValidStr(protocol.sslHost) || protocol.sslHost.length > 64) {
+    if (!ValidStr(protocol.caFilePath) && !ValidStr(protocol.clientKeyPath) && !ValidStr(protocol.clientCertPath)) {
         return NO;
     }
-    if (!ValidStr(protocol.sslPort) || [protocol.sslPort integerValue] < 1 || [protocol.sslPort integerValue] > 65535) {
-        return NO;
-    }
-    if (!ValidStr(protocol.caFilePath)) {
-        return NO;
-    }
-    if (protocol.clientKeyPath.length > 100 || protocol.clientCertPath.length > 100) {
+    if (protocol.clientKeyPath.length > 256 || protocol.clientCertPath.length > 256 || protocol.caFilePath.length > 256) {
         return NO;
     }
     return YES;

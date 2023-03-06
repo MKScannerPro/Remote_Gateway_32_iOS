@@ -36,10 +36,6 @@ static CGFloat const textFieldHeight = 30.f;
 
 @property (nonatomic, strong)UIButton *certificateButton;
 
-@property (nonatomic, strong)MKRGMqttServerSSLTextField *hostView;
-
-@property (nonatomic, strong)MKRGMqttServerSSLTextField *portView;
-
 @property (nonatomic, strong)MKRGMqttServerSSLTextField *caFileView;
 
 @property (nonatomic, strong)MKRGMqttServerSSLTextField *clientKeyView;
@@ -57,8 +53,6 @@ static CGFloat const textFieldHeight = 30.f;
         [self addSubview:self.bottomView];
         [self.bottomView addSubview:self.certificateLabel];
         [self.bottomView addSubview:self.certificateButton];
-        [self.bottomView addSubview:self.hostView];
-        [self.bottomView addSubview:self.portView];
         [self.bottomView addSubview:self.caFileView];
         [self.bottomView addSubview:self.clientKeyView];
         [self.bottomView addSubview:self.clientCertView];
@@ -98,34 +92,22 @@ static CGFloat const textFieldHeight = 30.f;
         make.centerY.mas_equalTo(self.certificateButton.mas_centerY);
         make.height.mas_equalTo(MKFont(13.f).lineHeight);
     }];
-    [self.hostView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.caFileView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.top.mas_equalTo(self.certificateButton.mas_bottom).mas_offset(10.f);
         make.height.mas_equalTo(textFieldHeight);
     }];
-    [self.portView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.hostView.mas_bottom).mas_offset(10.f);
-        make.height.mas_equalTo(textFieldHeight);
-    }];
-    [self.caFileView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.portView.mas_bottom).mas_offset(10.f);
-        make.height.mas_equalTo(textFieldHeight);
-    }];
-    [self.clientKeyView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.clientCertView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.top.mas_equalTo(self.caFileView.mas_bottom).mas_offset(10.f);
         make.height.mas_equalTo(textFieldHeight);
     }];
-    [self.clientCertView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.clientKeyView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.clientKeyView.mas_bottom).mas_offset(10.f);
+        make.top.mas_equalTo(self.clientCertView.mas_bottom).mas_offset(10.f);
         make.height.mas_equalTo(textFieldHeight);
     }];
 }
@@ -182,49 +164,31 @@ static CGFloat const textFieldHeight = 30.f;
     [self.certificateButton setTitle:dataList[_dataModel.certificate] forState:UIControlStateNormal];
     [self updateCertificateView:_dataModel.certificate];
     
-    MKRGMqttServerSSLTextFieldModel *hostModel = [[MKRGMqttServerSSLTextFieldModel alloc] init];
-    hostModel.index = 0;
-    hostModel.msg = @"Host";
-    hostModel.textPlaceholder = @"1-64Characters";
-    hostModel.textFieldType = mk_normal;
-    hostModel.textFieldValue = SafeStr(_dataModel.sslHost);
-    hostModel.maxLength = 64;
-    self.hostView.dataModel = hostModel;
-    
-    MKRGMqttServerSSLTextFieldModel *portModel = [[MKRGMqttServerSSLTextFieldModel alloc] init];
-    portModel.index = 1;
-    portModel.msg = @"Port";
-    portModel.textPlaceholder = @"1-65535";
-    portModel.textFieldType = mk_realNumberOnly;
-    portModel.textFieldValue = SafeStr(_dataModel.sslPort);
-    portModel.maxLength = 5;
-    self.portView.dataModel = portModel;
-    
     MKRGMqttServerSSLTextFieldModel *caModel = [[MKRGMqttServerSSLTextFieldModel alloc] init];
-    caModel.index = 2;
-    caModel.msg = @"CA File Path";
-    caModel.textPlaceholder = @"1-128Characters";
+    caModel.index = 0;
+    caModel.msg = @"CA cert file URL";
+    caModel.textPlaceholder = @"0-256 Characters";
     caModel.textFieldType = mk_normal;
     caModel.textFieldValue = SafeStr(_dataModel.caFilePath);
-    caModel.maxLength = 128;
+    caModel.maxLength = 256;
     self.caFileView.dataModel = caModel;
     
     MKRGMqttServerSSLTextFieldModel *clientKeyModel = [[MKRGMqttServerSSLTextFieldModel alloc] init];
-    clientKeyModel.index = 3;
-    clientKeyModel.msg = @"Client Key File";
-    clientKeyModel.textPlaceholder = @"1-128Characters";
+    clientKeyModel.index = 1;
+    clientKeyModel.msg = @"Client key file URL";
+    clientKeyModel.textPlaceholder = @"0-256 Characters";
     clientKeyModel.textFieldType = mk_normal;
     clientKeyModel.textFieldValue = SafeStr(_dataModel.clientKeyPath);
-    clientKeyModel.maxLength = 128;
+    clientKeyModel.maxLength = 256;
     self.clientKeyView.dataModel = clientKeyModel;
     
     MKRGMqttServerSSLTextFieldModel *clientModel = [[MKRGMqttServerSSLTextFieldModel alloc] init];
-    clientModel.index = 4;
-    clientModel.msg = @"Client Cert File";
-    clientModel.textPlaceholder = @"1-128Characters";
+    clientModel.index = 2;
+    clientModel.msg = @"Client cert file URL";
+    clientModel.textPlaceholder = @"0-256 Characters";
     clientModel.textFieldType = mk_normal;
     clientModel.textFieldValue = SafeStr(_dataModel.clientCertPath);
-    clientModel.maxLength = 128;
+    clientModel.maxLength = 256;
     self.clientCertView.dataModel = clientModel;
     
     self.bottomView.hidden = !_dataModel.sslIsOn;
@@ -239,8 +203,6 @@ static CGFloat const textFieldHeight = 30.f;
 - (void)updateCertificateView:(NSInteger)certificate {
     if (certificate == 0) {
         //隐藏下面的证书相关
-        self.hostView.hidden = YES;
-        self.portView.hidden = YES;
         self.caFileView.hidden = YES;
         self.clientCertView.hidden = YES;
         self.clientKeyView.hidden = YES;
@@ -248,16 +210,12 @@ static CGFloat const textFieldHeight = 30.f;
     }
     if (certificate == 1) {
         //只保留CA证书
-        self.hostView.hidden = NO;
-        self.portView.hidden = NO;
         self.caFileView.hidden = NO;
         self.clientCertView.hidden = YES;
         self.clientKeyView.hidden = YES;
         return;
     }
     //双向验证
-    self.hostView.hidden = NO;
-    self.portView.hidden = NO;
     self.caFileView.hidden = NO;
     self.clientCertView.hidden = NO;
     self.clientKeyView.hidden = NO;
@@ -312,22 +270,6 @@ static CGFloat const textFieldHeight = 30.f;
         [_certificateButton.titleLabel setFont:MKFont(13.f)];
     }
     return _certificateButton;
-}
-
-- (MKRGMqttServerSSLTextField *)hostView {
-    if (!_hostView) {
-        _hostView = [[MKRGMqttServerSSLTextField alloc] init];
-        _hostView.delegate = self;
-    }
-    return _hostView;
-}
-
-- (MKRGMqttServerSSLTextField *)portView {
-    if (!_portView) {
-        _portView = [[MKRGMqttServerSSLTextField alloc] init];
-        _portView.delegate = self;
-    }
-    return _portView;
 }
 
 - (MKRGMqttServerSSLTextField *)caFileView {

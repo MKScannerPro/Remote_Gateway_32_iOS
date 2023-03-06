@@ -17,10 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 0:CA certificate     1:Self signed certificates
 @property (nonatomic, assign)NSInteger certificate;
 
-@property (nonatomic, copy)NSString *sslHost;
-
-@property (nonatomic, copy)NSString *sslPort;
-
 @property (nonatomic, copy)NSString *caFilePath;
 
 @property (nonatomic, copy)NSString *clientKeyPath;

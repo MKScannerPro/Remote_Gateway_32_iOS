@@ -193,36 +193,22 @@ mk_textSwitchCellDelegate>
         return;
     }
     if (index == 5) {
-        //Host
-        self.dataModel.host = value;
+        //CA certificate path
+        self.dataModel.caFilePath = value;
         MKTextFieldCellModel *cellModel = self.section8List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 6) {
-        //Port
-        self.dataModel.port = value;
-        MKTextFieldCellModel *cellModel = self.section8List[1];
-        cellModel.textFieldValue = value;
-        return;
-    }
-    if (index == 7) {
-        //CA certificate path
-        self.dataModel.caFileName = value;
-        MKTextFieldCellModel *cellModel = self.section8List[2];
-        cellModel.textFieldValue = value;
-        return;
-    }
-    if (index == 8) {
         //Client cert path
-        self.dataModel.clientCertName = value;
+        self.dataModel.clientCertPath = value;
         MKTextFieldCellModel *cellModel = self.section9List[0];
         cellModel.textFieldValue = value;
         return;
     }
-    if (index == 9) {
+    if (index == 7) {
         //Client key path
-        self.dataModel.clientKeyName = value;
+        self.dataModel.clientKeyPath = value;
         MKTextFieldCellModel *cellModel = self.section10List[0];
         cellModel.textFieldValue = value;
         return;
@@ -560,47 +546,31 @@ mk_textSwitchCellDelegate>
 }
 
 - (void)loadSection8Datas {
-    MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
-    cellModel1.index = 5;
-    cellModel1.msg = @"Host";
-    cellModel1.maxLength = 64;
-    cellModel1.textPlaceholder = @"1-64 Characters";
-    cellModel1.textFieldType = mk_normal;
-    [self.section8List addObject:cellModel1];
-    
-    MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 6;
-    cellModel2.msg = @"Port";
-    cellModel2.maxLength = 5;
-    cellModel2.textPlaceholder = @"1-65535";
-    cellModel2.textFieldType = mk_realNumberOnly;
-    [self.section8List addObject:cellModel2];
-    
-    MKTextFieldCellModel *cellModel3 = [[MKTextFieldCellModel alloc] init];
-    cellModel3.index = 7;
-    cellModel3.msg = @"CA certificate path";
-    cellModel3.maxLength = 100;
-    cellModel3.textPlaceholder = @"1-100 Characters";
-    cellModel3.textFieldType = mk_normal;
-    [self.section8List addObject:cellModel3];
+    MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
+    cellModel.index = 5;
+    cellModel.msg = @"CA cert file URL";
+    cellModel.maxLength = 256;
+    cellModel.textPlaceholder = @"0-256 Characters";
+    cellModel.textFieldType = mk_normal;
+    [self.section8List addObject:cellModel];
 }
 
 - (void)loadSection9Datas {
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
-    cellModel.index = 8;
-    cellModel.msg = @"Client cert path";
-    cellModel.maxLength = 100;
-    cellModel.textPlaceholder = @"0-100 Characters";
+    cellModel.index = 6;
+    cellModel.msg = @"Client cert file URL";
+    cellModel.maxLength = 256;
+    cellModel.textPlaceholder = @"0-256 Characters";
     cellModel.textFieldType = mk_normal;
     [self.section9List addObject:cellModel];
 }
 
 - (void)loadSection10Datas {
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
-    cellModel.index = 9;
-    cellModel.msg = @"Client key path";
-    cellModel.maxLength = 100;
-    cellModel.textPlaceholder = @"0-100 Characters";
+    cellModel.index = 7;
+    cellModel.msg = @"Client key file URL";
+    cellModel.maxLength = 256;
+    cellModel.textPlaceholder = @"0-256 Characters";
     cellModel.textFieldType = mk_normal;
     [self.section10List addObject:cellModel];
 }
@@ -626,7 +596,7 @@ mk_textSwitchCellDelegate>
         _tableView.dataSource = self;
         
         _tableView.backgroundColor = RGBCOLOR(242, 242, 242);
-        _tableView.tableFooterView = [self tableFooterView];
+//        _tableView.tableFooterView = [self tableFooterView];
     }
     return _tableView;
 }

@@ -60,18 +60,14 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
         if (self.certificate < 0 || self.certificate > 2) {
             return @"Certificate error";
         }
-        if (self.certificate > 0) {
-            if (!ValidStr(self.sslHost) || self.sslHost.length > 64 || ![self.sslHost isAsciiString]) {
-                return @"SSL Host error";
-            }
-            if (!ValidStr(self.sslPort) || [self.sslPort integerValue] < 1 || [self.sslPort integerValue] > 65535) {
-                return @"SSL Port error";
-            }
+        if (self.certificate == 1) {
             if (!ValidStr(self.caFilePath)) {
-                return @"CA File cannot be empty.";
+                return @"CA File Path Error";
             }
-            if (self.certificate == 2 && (!ValidStr(self.clientKeyPath) || !ValidStr(self.clientCertPath))) {
-                return @"Client File cannot be empty.";
+        }
+        if (self.certificate == 2) {
+            if (!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath)) {
+                return @"File Path cannot be empty.";
             }
         }
     }

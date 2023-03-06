@@ -36,6 +36,10 @@ extern NSString *const MKRGReceiveGatewayDisconnectDeviceNotification;
 
 extern NSString *const MKRGReceiveGatewayConnectedDeviceDatasNotification;
 
+extern NSString *const MKRGReceiveBxpButtonDfuProgressNotification;
+
+extern NSString *const MKRGReceiveBxpButtonDfuResultNotification;
+
 
 extern NSString *const MKRGReceiveDeviceOfflineNotification;
 

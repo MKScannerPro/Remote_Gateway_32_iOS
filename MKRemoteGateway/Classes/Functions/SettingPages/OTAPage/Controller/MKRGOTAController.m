@@ -97,17 +97,7 @@ MKTextFieldCellDelegate>
     MKTextFieldCellModel *cellModel = self.dataList[index];
     cellModel.textFieldValue = value;
     if (index == 0) {
-        //Host
-        self.dataModel.host = value;
-        return;
-    }
-    if (index == 1) {
-        //Port
-        self.dataModel.port = value;
-        return;
-    }
-    if (index == 2) {
-        //File Path
+        //Firmware file URL
         self.dataModel.filePath = value;
         return;
     }
@@ -155,27 +145,11 @@ MKTextFieldCellDelegate>
 - (void)loadSectionDatas {
     MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
     cellModel1.index = 0;
-    cellModel1.msg = @"Host";
-    cellModel1.textPlaceholder = @"1-64 Characters";
+    cellModel1.msg = @"Firmware file URL";
+    cellModel1.textPlaceholder = @"1-256 Characters";
     cellModel1.textFieldType = mk_normal;
-    cellModel1.maxLength = 64;
+    cellModel1.maxLength = 256;
     [self.dataList addObject:cellModel1];
-    
-    MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 1;
-    cellModel2.msg = @"Port";
-    cellModel2.textPlaceholder = @"1-65535";
-    cellModel2.textFieldType = mk_realNumberOnly;
-    cellModel2.maxLength = 5;
-    [self.dataList addObject:cellModel2];
-    
-    MKTextFieldCellModel *cellModel3 = [[MKTextFieldCellModel alloc] init];
-    cellModel3.index = 2;
-    cellModel3.msg = @"File Path";
-    cellModel3.textPlaceholder = @"1-100 Characters";
-    cellModel3.textFieldType = mk_normal;
-    cellModel3.maxLength = 100;
-    [self.dataList addObject:cellModel3];
     
     [self.tableView reloadData];
 }

@@ -63,20 +63,16 @@ NS_ASSUME_NONNULL_BEGIN
                       failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// OTA.
-/// @param host 1-64 Characters
-/// @param port 1~65535
-/// @param filePath 1-100 Characters
+/// @param filePath 1-256 Characters
 /// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
 /// @param topic topic 1-128 Characters
 /// @param sucBlock Success callback
 /// @param failedBlock Failed callback
-+ (void)rg_configOTAHost:(NSString *)host
-                    port:(NSInteger)port
-                filePath:(NSString *)filePath
-              macAddress:(NSString *)macAddress
-                   topic:(NSString *)topic
-                sucBlock:(void (^)(id returnData))sucBlock
-             failedBlock:(void (^)(NSError *error))failedBlock;
++ (void)rg_configOTAWithFilePath:(NSString *)filePath
+                      macAddress:(NSString *)macAddress
+                           topic:(NSString *)topic
+                        sucBlock:(void (^)(id returnData))sucBlock
+                     failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Configure the NTP server.
 /// @param isOn isOn
@@ -513,6 +509,22 @@ NS_ASSUME_NONNULL_BEGIN
                                          topic:(NSString *)topic
                                       sucBlock:(void (^)(id returnData))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// BXP-Button DFU.
+/// @param firmwareUrl Firmware file URL.1- 256 Characters.
+/// @param dataUrl Init data file URL.1- 256 Characters.
+/// @param bleMacAddress The mac address of the target bluetooth device.(e.g.AABBCCDDEEFF)
+/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)rg_startBXPButtonDfuWithFirmwareUrl:(NSString *)firmwareUrl
+                                    dataUrl:(NSString *)dataUrl
+                                     bleMac:(NSString *)bleMacAddress
+                                 macAddress:(NSString *)macAddress
+                                      topic:(NSString *)topic
+                                   sucBlock:(void (^)(id returnData))sucBlock
+                                failedBlock:(void (^)(NSError *error))failedBlock;
 
 
 /// The gateway connects to the Bluetooth device with the specified MAC address.

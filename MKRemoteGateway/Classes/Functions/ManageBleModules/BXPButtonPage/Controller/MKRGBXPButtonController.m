@@ -29,9 +29,14 @@
 #import "MKRGDeviceModeManager.h"
 #import "MKRGDeviceModel.h"
 
+#import "MKRGButtonFirmwareCell.h"
+
+#import "MKRGButtonDFUController.h"
+
 @interface MKRGBXPButtonController ()<UITableViewDelegate,
 UITableViewDataSource,
-MKButtonMsgCellDelegate>
+MKButtonMsgCellDelegate,
+MKRGButtonFirmwareCellDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -42,6 +47,10 @@ MKButtonMsgCellDelegate>
 @property (nonatomic, strong)NSMutableArray *section2List;
 
 @property (nonatomic, strong)NSMutableArray *section3List;
+
+@property (nonatomic, strong)NSMutableArray *section4List;
+
+@property (nonatomic, strong)NSMutableArray *section5List;
 
 @property (nonatomic, strong)NSMutableArray *headerList;
 
@@ -106,10 +115,10 @@ MKButtonMsgCellDelegate>
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 3) {
         return 10.f;
     }
-    if (section == 3) {
+    if (section == 5) {
         return 55.f;
     }
     return 0.f;
@@ -139,6 +148,12 @@ MKButtonMsgCellDelegate>
     if (section == 3) {
         return self.section3List.count;
     }
+    if (section == 4) {
+        return self.section4List.count;
+    }
+    if (section == 5) {
+        return self.section5List.count;
+    }
     return 0;
 }
 
@@ -149,7 +164,7 @@ MKButtonMsgCellDelegate>
         return cell;
     }
     if (indexPath.section == 1) {
-        MKButtonMsgCell *cell = [MKButtonMsgCell initCellWithTableView:tableView];
+        MKRGButtonFirmwareCell *cell = [MKRGButtonFirmwareCell initCellWithTableView:tableView];
         cell.dataModel = self.section1List[indexPath.row];
         cell.delegate = self;
         return cell;
@@ -159,9 +174,20 @@ MKButtonMsgCellDelegate>
         cell.dataModel =  self.section2List[indexPath.row];
         return cell;
     }
+    if (indexPath.section == 3) {
+        MKButtonMsgCell *cell = [MKButtonMsgCell initCellWithTableView:tableView];
+        cell.dataModel = self.section3List[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
+    if (indexPath.section == 4) {
+        MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
+        cell.dataModel =  self.section4List[indexPath.row];
+        return cell;
+    }
     
     MKButtonMsgCell *cell = [MKButtonMsgCell initCellWithTableView:tableView];
-    cell.dataModel =  self.section3List[indexPath.row];
+    cell.dataModel =  self.section5List[indexPath.row];
     cell.delegate = self;
     return cell;
 }
@@ -182,6 +208,17 @@ MKButtonMsgCellDelegate>
     }
 }
 
+#pragma mark - MKRGButtonFirmwareCellDelegate
+- (void)rg_buttonFirmwareCell_buttonAction:(NSInteger)index {
+    if (index == 0) {
+        //DFU
+        MKRGButtonDFUController *vc = [[MKRGButtonDFUController alloc] init];
+        vc.bleMacAddress = self.deviceBleInfo[@"data"][@"mac"];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+}
+
 #pragma mark - notes
 - (void)receiveDisconnect:(NSNotification *)note {
     NSDictionary *user = note.userInfo;
@@ -190,6 +227,9 @@ MKButtonMsgCellDelegate>
     }
     NSDictionary *dataDic = user[@"data"];
     if (![dataDic[@"mac"] isEqualToString:self.deviceBleInfo[@"data"][@"mac"]]) {
+        return;
+    }
+    if (![MKBaseViewController isCurrentViewControllerVisible:self]) {
         return;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_rg_needDismissAlert" object:nil];
@@ -241,19 +281,19 @@ MKButtonMsgCellDelegate>
 }
 
 - (void)updateStatusDatas {
-    MKNormalTextCellModel *cellModel1 = self.section2List[0];
+    MKNormalTextCellModel *cellModel1 = self.section4List[0];
     cellModel1.rightMsg = [NSString stringWithFormat:@"%@%@",self.bxpStatusDic[@"data"][@"battery_v"],@"mV"];
     
-    MKNormalTextCellModel *cellModel2 = self.section2List[1];
+    MKNormalTextCellModel *cellModel2 = self.section4List[1];
     cellModel2.rightMsg = [NSString stringWithFormat:@"%@",self.bxpStatusDic[@"data"][@"single_alarm_num"]];
     
-    MKNormalTextCellModel *cellModel3 = self.section2List[2];
+    MKNormalTextCellModel *cellModel3 = self.section4List[2];
     cellModel3.rightMsg = [NSString stringWithFormat:@"%@",self.bxpStatusDic[@"data"][@"double_alarm_num"]];
     
-    MKNormalTextCellModel *cellModel4 = self.section2List[3];
+    MKNormalTextCellModel *cellModel4 = self.section4List[3];
     cellModel4.rightMsg = [NSString stringWithFormat:@"%@",self.bxpStatusDic[@"data"][@"long_alarm_num"]];
     
-    MKNormalTextCellModel *cellModel5 = self.section2List[4];
+    MKNormalTextCellModel *cellModel5 = self.section4List[4];
     NSString *statusValue = [MKBLEBaseSDKAdopter fetchHexValue:[self.bxpStatusDic[@"data"][@"alarm_status"] integerValue] byteLen:1];
     NSString *binary = [MKBLEBaseSDKAdopter binaryByhex:statusValue];
     BOOL singleStatus = [[binary substringWithRange:NSMakeRange(7, 1)] isEqualToString:@"1"];
@@ -302,8 +342,10 @@ MKButtonMsgCellDelegate>
     [self loadSection1Datas];
     [self loadSection2Datas];
     [self loadSection3Datas];
+    [self loadSection4Datas];
+    [self loadSection5Datas];
     
-    for (NSInteger i = 0; i < 3; i ++) {
+    for (NSInteger i = 0; i < 5; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];
     }
@@ -327,65 +369,71 @@ MKButtonMsgCellDelegate>
     cellModel2.leftMsg = @"Manufacture";
     cellModel2.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"company_name"]);
     [self.section0List addObject:cellModel2];
-    
-    MKNormalTextCellModel *cellModel3 = [[MKNormalTextCellModel alloc] init];
-    cellModel3.leftMsg = @"Firmware version";
-    cellModel3.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"firmware_version"]);
-    [self.section0List addObject:cellModel3];
-    
-    MKNormalTextCellModel *cellModel4 = [[MKNormalTextCellModel alloc] init];
-    cellModel4.leftMsg = @"Hardware version";
-    cellModel4.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"hardware_version"]);
-    [self.section0List addObject:cellModel4];
-    
-    MKNormalTextCellModel *cellModel5 = [[MKNormalTextCellModel alloc] init];
-    cellModel5.leftMsg = @"Software version";
-    cellModel5.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"software_version"]);
-    [self.section0List addObject:cellModel5];
-    
-    MKNormalTextCellModel *cellModel6 = [[MKNormalTextCellModel alloc] init];
-    cellModel6.leftMsg = @"MAC address";
-    cellModel6.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"mac"]);
-    [self.section0List addObject:cellModel6];
 }
 
 - (void)loadSection1Datas {
-    MKButtonMsgCellModel *cellModel = [[MKButtonMsgCellModel alloc] init];
+    MKRGButtonFirmwareCellModel *cellModel = [[MKRGButtonFirmwareCellModel alloc] init];
     cellModel.index = 0;
-    cellModel.msg = @"Read battery and alarm info";
-    cellModel.buttonTitle = @"Read";
+    cellModel.leftMsg = @"Firmware version";
+    cellModel.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"firmware_version"]);
+    cellModel.rightButtonTitle = @"DFU";
     [self.section1List addObject:cellModel];
 }
 
 - (void)loadSection2Datas {
     MKNormalTextCellModel *cellModel1 = [[MKNormalTextCellModel alloc] init];
-    cellModel1.leftMsg = @"Battery voltage";
+    cellModel1.leftMsg = @"Hardware version";
+    cellModel1.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"hardware_version"]);
     [self.section2List addObject:cellModel1];
     
     MKNormalTextCellModel *cellModel2 = [[MKNormalTextCellModel alloc] init];
-    cellModel2.leftMsg = @"Single press event count";
+    cellModel2.leftMsg = @"Software version";
+    cellModel2.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"software_version"]);
     [self.section2List addObject:cellModel2];
     
     MKNormalTextCellModel *cellModel3 = [[MKNormalTextCellModel alloc] init];
-    cellModel3.leftMsg = @"Double press event count";
+    cellModel3.leftMsg = @"MAC address";
+    cellModel3.rightMsg = SafeStr(self.deviceBleInfo[@"data"][@"mac"]);
     [self.section2List addObject:cellModel3];
-    
-    MKNormalTextCellModel *cellModel4 = [[MKNormalTextCellModel alloc] init];
-    cellModel4.leftMsg = @"Long press event count";
-    [self.section2List addObject:cellModel4];
-    
-    MKNormalTextCellModel *cellModel5 = [[MKNormalTextCellModel alloc] init];
-    cellModel5.leftMsg = @"Alarm status";
-    
-    [self.section2List addObject:cellModel5];
 }
 
 - (void)loadSection3Datas {
     MKButtonMsgCellModel *cellModel = [[MKButtonMsgCellModel alloc] init];
+    cellModel.index = 0;
+    cellModel.msg = @"Read battery and alarm info";
+    cellModel.buttonTitle = @"Read";
+    [self.section3List addObject:cellModel];
+}
+
+- (void)loadSection4Datas {
+    MKNormalTextCellModel *cellModel1 = [[MKNormalTextCellModel alloc] init];
+    cellModel1.leftMsg = @"Battery voltage";
+    [self.section4List addObject:cellModel1];
+    
+    MKNormalTextCellModel *cellModel2 = [[MKNormalTextCellModel alloc] init];
+    cellModel2.leftMsg = @"Single press event count";
+    [self.section4List addObject:cellModel2];
+    
+    MKNormalTextCellModel *cellModel3 = [[MKNormalTextCellModel alloc] init];
+    cellModel3.leftMsg = @"Double press event count";
+    [self.section4List addObject:cellModel3];
+    
+    MKNormalTextCellModel *cellModel4 = [[MKNormalTextCellModel alloc] init];
+    cellModel4.leftMsg = @"Long press event count";
+    [self.section4List addObject:cellModel4];
+    
+    MKNormalTextCellModel *cellModel5 = [[MKNormalTextCellModel alloc] init];
+    cellModel5.leftMsg = @"Alarm status";
+    
+    [self.section4List addObject:cellModel5];
+}
+
+- (void)loadSection5Datas {
+    MKButtonMsgCellModel *cellModel = [[MKButtonMsgCellModel alloc] init];
     cellModel.index = 1;
     cellModel.msg = @"Dismiss alarm status";
     cellModel.buttonTitle = @"Dismiss";
-    [self.section3List addObject:cellModel];
+    [self.section5List addObject:cellModel];
 }
 
 #pragma mark - UI
@@ -438,6 +486,20 @@ MKButtonMsgCellDelegate>
         _section3List = [NSMutableArray array];
     }
     return _section3List;
+}
+
+- (NSMutableArray *)section4List {
+    if (!_section4List) {
+        _section4List = [NSMutableArray array];
+    }
+    return _section4List;
+}
+
+- (NSMutableArray *)section5List {
+    if (!_section5List) {
+        _section5List = [NSMutableArray array];
+    }
+    return _section5List;
 }
 
 - (NSMutableArray *)headerList {
