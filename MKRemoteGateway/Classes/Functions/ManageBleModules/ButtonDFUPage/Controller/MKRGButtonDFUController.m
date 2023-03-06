@@ -137,7 +137,7 @@ MKTextFieldCellDelegate>
     }
     [[MKHudManager share] hide];
     self.progressLabel.hidden = NO;
-    self.progressLabel.text = [NSString stringWithFormat:@"Beacon DFU process: %@%@",user[@"data"][@"precent"],@"%"];
+    self.progressLabel.text = [NSString stringWithFormat:@"Beacon DFU process: %@%@",user[@"data"][@"percent"],@"%"];
 }
 
 - (void)receiveDfuResult:(NSNotification *)note {
