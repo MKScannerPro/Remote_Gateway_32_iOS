@@ -204,7 +204,11 @@ MKRGDeviceModelDelegate>
         [self.dataList replaceObjectAtIndex:index withObject:deviceModel];
     }else {
         //不存在，则添加到设备列表
-        [self.dataList addObject:deviceModel];
+        if (self.dataList.count > 0) {
+            [self.dataList insertObject:deviceModel atIndex:0];
+        }else {
+            [self.dataList addObject:deviceModel];
+        }
     }
     
     [self loadMainViews];
@@ -403,6 +407,19 @@ MKRGDeviceModelDelegate>
     [self needRefreshList];
 }
 
+- (void)reloadDeviceTopics {
+    //切网之后需要重新加载topic
+    //先取消当前所有订阅
+    [[MKRGMQTTDataManager shared] clearAllSubscriptions];
+    //重新加载需要订阅的topic
+    NSMutableArray *topicList = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.dataList.count; i ++) {
+        MKRGDeviceModel *deviceModel = self.dataList[i];
+        [topicList addObject:[deviceModel currentPublishedTopic]];
+    }
+    [[MKRGMQTTDataManager shared] subscriptions:topicList];
+}
+
 #pragma mark - event method
 - (void)addButtonPressed {
     if (!ValidStr([MKRGMQTTDataManager shared].serverParams.host)) {
@@ -550,6 +567,10 @@ MKRGDeviceModelDelegate>
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(deviceResetByButton:)
                                                  name:MKRGReceiveDeviceResetByButtonNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadDeviceTopics)
+                                                 name:@"mk_rg_needReloadTopicsNotification"
                                                object:nil];
 }
 

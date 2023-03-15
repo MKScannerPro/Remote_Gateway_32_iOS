@@ -66,6 +66,10 @@ MKTextFieldCellDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self loadSectionDatas];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveOTAResult:)
+                                                 name:MKRGReceiveDeviceOTAResultNotification
+                                               object:nil];
 }
 
 #pragma mark - UITableViewDelegate
@@ -122,17 +126,11 @@ MKTextFieldCellDelegate>
 
 #pragma mark - event method
 - (void)startButtonPressed {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    [[MKHudManager share] showHUDWithTitle:@"Waiting..." inView:self.view isPenetration:NO];
     self.leftButton.enabled = NO;
     @weakify(self);
     [self.dataModel configDataWithSucBlock:^{
-        @strongify(self);
-        [[MKHudManager share] hide];
-        [[MKHudManager share] showHUDWithTitle:@"Waiting..." inView:self.view isPenetration:NO];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(receiveOTAResult:)
-                                                     name:MKRGReceiveDeviceOTAResultNotification
-                                                   object:nil];
+        
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
         [[MKHudManager share] hide];

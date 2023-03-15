@@ -89,6 +89,10 @@ MKRGImportServerControllerDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self readDataFromDevice];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveUpdateCerts:)
+                                                 name:MKRGReceiveDeviceUpdateMqttCertsResultNotification
+                                               object:nil];
 }
 
 #pragma mark - super method
@@ -398,12 +402,8 @@ MKRGImportServerControllerDelegate>
     [self.dataModel configDataWithSucBlock:^{
         @strongify(self);
         //先判断是否下载证书
-        if (self.dataModel.connectMode == 2 || self.dataModel.connectMode == 3) {
+        if ((self.dataModel.connectMode == 2 || self.dataModel.connectMode == 3) && !(!ValidStr(self.dataModel.caFilePath) && !ValidStr(self.dataModel.clientKeyPath) && !ValidStr(self.dataModel.clientCertPath))) {
             //需要下载证书
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(receiveUpdateCerts:)
-                                                         name:MKRGReceiveDeviceUpdateMqttCertsResultNotification
-                                                       object:nil];
             return;
         }
         //不需要证书

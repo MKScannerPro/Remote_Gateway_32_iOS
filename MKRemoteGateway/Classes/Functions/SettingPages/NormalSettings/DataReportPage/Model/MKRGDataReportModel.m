@@ -53,7 +53,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readDataReportTimeoutWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.timeout = [NSString stringWithFormat:@"%ld",(long)([returnData[@"data"][@"timeout"] integerValue] / 50)];
+        self.timeout = [NSString stringWithFormat:@"%@",returnData[@"data"][@"timeout"]];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

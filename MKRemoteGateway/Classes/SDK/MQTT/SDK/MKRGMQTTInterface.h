@@ -461,7 +461,7 @@ NS_ASSUME_NONNULL_BEGIN
                          failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Data report timeout.
-/// @param timeout 0 x 50ms ~ 60 x 50ms
+/// @param timeout 100ms ~ 3000ms
 /// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
 /// @param topic topic 1-128 Characters
 /// @param sucBlock Success callback

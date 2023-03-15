@@ -61,13 +61,13 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
             return @"Certificate error";
         }
         if (self.certificate == 1) {
-            if (!ValidStr(self.caFilePath)) {
+            if (self.caFilePath.length > 256) {
                 return @"CA File Path Error";
             }
         }
         if (self.certificate == 2) {
-            if (!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath)) {
-                return @"File Path cannot be empty.";
+            if (self.caFilePath.length > 256 || self.clientKeyPath.length > 256 || self.clientCertPath.length > 256) {
+                return @"File Path Error.";
             }
         }
     }
@@ -140,7 +140,7 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
             [self operationFailedBlockWithMsg:@"Config Mqtt Infos Error" block:failedBlock];
             return;
         }
-        if (self.connectMode > 1) {
+        if (self.connectMode > 1 && !(!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath))) {
             if (![self configMqttCerts]) {
                 [self operationFailedBlockWithMsg:@"Config Mqtt Certs Error" block:failedBlock];
                 return;

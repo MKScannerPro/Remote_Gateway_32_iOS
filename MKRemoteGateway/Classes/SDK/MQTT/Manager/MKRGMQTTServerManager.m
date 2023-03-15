@@ -96,7 +96,12 @@ static dispatch_once_t onceToken;
     if (!ValidStr(topic) || !ValidData(data)) {
         return;
     }
-    NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingAllowFragments
+                                                              error:nil];
+    if (!ValidDict(dataDic)) {
+        return;
+    }
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDic options:0 error:&error];
     NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];

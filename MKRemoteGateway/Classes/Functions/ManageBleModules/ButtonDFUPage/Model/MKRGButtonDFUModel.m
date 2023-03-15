@@ -26,6 +26,10 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        if (![self validParams]) {
+            [self operationFailedBlockWithMsg:@"File URL error" block:failedBlock];
+            return;
+        }
         if (![self startDfu]) {
             [self operationFailedBlockWithMsg:@"Setup failed!" block:failedBlock];
             return;
@@ -49,6 +53,13 @@
     }];
     dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     return success;
+}
+
+- (BOOL)validParams {
+    if (!ValidStr(self.firmwareUrl) || self.firmwareUrl.length > 256 || !ValidStr(self.dataUrl) || self.dataUrl.length > 256) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - private method

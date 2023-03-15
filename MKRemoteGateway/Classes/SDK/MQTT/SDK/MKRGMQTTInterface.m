@@ -1189,7 +1189,7 @@
         [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
         return;
     }
-    if (timeout < 0 || timeout > 60) {
+    if (timeout < 100 || timeout > 3000) {
         [self operationFailedBlockWithMsg:@"Params error" failedBlock:failedBlock];
         return;
     }
@@ -1199,7 +1199,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"timeout":@(timeout * 50),
+            @"timeout":@(timeout),
         }
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -2606,10 +2606,10 @@
     if (!ValidStr(protocol.keepAlive) || [protocol.keepAlive integerValue] < 10 || [protocol.keepAlive integerValue] > 120) {
         return NO;
     }
-    if (protocol.userName.length > 128 || (ValidStr(protocol.userName) && ![protocol.userName isAsciiString])) {
+    if (protocol.userName.length > 256 || (ValidStr(protocol.userName) && ![protocol.userName isAsciiString])) {
         return NO;
     }
-    if (protocol.password.length > 128 || (ValidStr(protocol.password) && ![protocol.password isAsciiString])) {
+    if (protocol.password.length > 256 || (ValidStr(protocol.password) && ![protocol.password isAsciiString])) {
         return NO;
     }
     if (protocol.connectMode < 0 || protocol.connectMode > 3) {

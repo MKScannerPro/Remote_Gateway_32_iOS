@@ -51,7 +51,8 @@
             [self operationFailedBlockWithMsg:@"Config Wifi Infos Error" block:failedBlock];
             return;
         }
-        if (self.security == 1) {
+        if (self.security == 1 && !(!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath))) {
+            //三个证书同时为空，则不需要发送
             if (((self.eapType == 0 || self.eapType == 1) && self.verifyServer) || self.eapType == 2) {
                 //TLS需要设置这个，0:PEAP-MSCHAPV2  1:TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才设置
                 if (![self configEAPCerts]) {
@@ -146,14 +147,14 @@
             return @"password error";
         }
         if (self.verifyServer) {
-            if (!ValidStr(self.caFilePath)) {
+            if (self.caFilePath.length > 256) {
                 return @"CA File Path Error";
             }
         }
     }
     if (self.eapType == 2) {
         //TLS
-        if (!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath)) {
+        if (self.caFilePath.length > 256 || self.clientKeyPath.length > 256 || self.clientCertPath.length > 256) {
             return @"File Path Error";
         }
         if (self.domainID.length > 64) {

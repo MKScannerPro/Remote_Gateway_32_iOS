@@ -270,7 +270,7 @@ mk_textSwitchCellDelegate>
     [self.dataModel configDataWithSucBlock:^{
         @strongify(self);
         //先判断是否下载证书
-        if (self.dataModel.security == 1) {
+        if (self.dataModel.security == 1 && !(!ValidStr(self.dataModel.caFilePath) && !ValidStr(self.dataModel.clientKeyPath) && !ValidStr(self.dataModel.clientCertPath))) {
             if (((self.dataModel.eapType == 0 || self.dataModel.eapType == 1) && self.dataModel.verifyServer) || self.dataModel.eapType == 2) {
                 //TLS需要配置证书，PEAP-MSCHAPV2和TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才配置证书
                 [[NSNotificationCenter defaultCenter] addObserver:self

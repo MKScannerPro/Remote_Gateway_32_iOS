@@ -116,8 +116,8 @@
 - (MKTextField *)textField {
     if (!_textField) {
         _textField = [[MKTextField alloc] initWithTextFieldType:mk_realNumberOnly];
-        _textField.maxLength = 2;
-        _textField.placeholder = @"0-60，unit: 50ms";
+        _textField.maxLength = 4;
+        _textField.placeholder = @"100-3000，unit:ms";
         _textField.borderStyle = UITextBorderStyleNone;
         _textField.font = MKFont(13.f);
         
@@ -136,7 +136,7 @@
         _noteLabel.textAlignment = NSTextAlignmentLeft;
         _noteLabel.font = MKFont(13.f);
         _noteLabel.textColor = UIColorFromRGB(0xcccccc);
-        _noteLabel.text = @"This value defines the time for the gateway to packet the scanning data. A value of 0 means that the gateway will report the scanning data immediately without packeting the scanning data.";
+        _noteLabel.text = @"This value defines the time for the gateway to packet the Beacon data. If the gateway doesn't get the next beacon data in the timeout, it will packet the current beacon data and send to cloud.";
         _noteLabel.numberOfLines = 0;
     }
     return _noteLabel;
