@@ -487,7 +487,11 @@ MKRGDeviceModelDelegate>
         deviceModel.lwtStatus = tempModel.lwtStatus;
         deviceModel.lwtTopic = tempModel.lwtTopic;
         deviceModel.delegate = self;
-        [self.dataList addObject:deviceModel];
+        if (i == 0) {
+            [self.dataList addObject:deviceModel];
+        }else {
+            [self.dataList insertObject:deviceModel atIndex:0];
+        }
         [topicList addObject:[deviceModel currentPublishedTopic]];
         if (deviceModel.lwtStatus) {
             //如果用户打开了遗嘱功能，则订阅topic
