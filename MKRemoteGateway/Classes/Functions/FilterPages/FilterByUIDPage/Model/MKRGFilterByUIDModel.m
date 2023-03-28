@@ -57,7 +57,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readFilterByUIDWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = ([returnData[@"data"][@"switch"] integerValue] == 1);
+        self.isOn = ([returnData[@"data"][@"switch_value"] integerValue] == 1);
         self.instanceID = [returnData[@"data"][@"instance"] lowercaseString];
         self.namespaceID = returnData[@"data"][@"namespace"];
         dispatch_semaphore_signal(self.semaphore);

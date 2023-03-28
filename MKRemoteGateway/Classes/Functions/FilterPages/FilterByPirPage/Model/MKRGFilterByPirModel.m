@@ -62,7 +62,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readFilterByPirWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = ([returnData[@"data"][@"switch"] integerValue] == 1);
+        self.isOn = ([returnData[@"data"][@"switch_value"] integerValue] == 1);
         self.delayRespneseStatus = [returnData[@"data"][@"delay_response_status"] integerValue];
         self.doorStatus = [returnData[@"data"][@"door_status"] integerValue];
         self.sensorSensitivity = [returnData[@"data"][@"sensor_sensitivity"] integerValue];

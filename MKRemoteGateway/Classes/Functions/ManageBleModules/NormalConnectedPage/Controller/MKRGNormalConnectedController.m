@@ -234,7 +234,7 @@ MKRGNormalConnectedCellDelegate>
     if (!ValidDict(self.deviceBleInfo)) {
         return;
     }
-    NSArray *serviceList = self.deviceBleInfo[@"data"][@"service"];
+    NSArray *serviceList = self.deviceBleInfo[@"data"][@"service_array"];
     if (!ValidArray(serviceList)) {
         return;
     }
@@ -244,7 +244,7 @@ MKRGNormalConnectedCellDelegate>
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         headerModel.text = [NSString stringWithFormat:@"%@%@",@"Service UUID: 0x",[SafeStr(serviceDic[@"service_uuid"]) uppercaseString]];
         
-        NSArray *tempCharList = serviceDic[@"char"];
+        NSArray *tempCharList = serviceDic[@"char_array"];
         NSInteger charCount = tempCharList.count;
         NSMutableArray *charList = [NSMutableArray array];
         NSMutableDictionary *charPathDic = [NSMutableDictionary dictionary];

@@ -57,7 +57,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readFilterBXPButtonWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = ([returnData[@"data"][@"switch"] integerValue] == 1);
+        self.isOn = ([returnData[@"data"][@"switch_value"] integerValue] == 1);
         self.singlePressIsOn = ([returnData[@"data"][@"single_press"] integerValue] == 1);
         self.doublePressIsOn = ([returnData[@"data"][@"double_press"] integerValue] == 1);
         self.longPressIsOn = ([returnData[@"data"][@"long_press"] integerValue] == 1);

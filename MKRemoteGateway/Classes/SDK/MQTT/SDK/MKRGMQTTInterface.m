@@ -184,7 +184,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"server":SafeStr(host),
         },
     };
@@ -746,7 +746,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"min_major":@(minMajor),
             @"max_major":@(maxMajor),
             @"min_minor":@(minMinor),
@@ -797,7 +797,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"namespace":SafeStr(namespaceID),
             @"instance":SafeStr(instanceID),
         }
@@ -837,7 +837,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"url":SafeStr(url),
         }
     };
@@ -866,7 +866,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"tlm_version":@(tlm),
         }
     };
@@ -894,7 +894,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"switch":(isOn ? @(1) : @(0)),
+                @"switch_value":(isOn ? @(1) : @(0)),
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -921,7 +921,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"switch":(isOn ? @(1) : @(0)),
+                @"switch_value":(isOn ? @(1) : @(0)),
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -948,7 +948,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"switch":(isOn ? @(1) : @(0)),
+                @"switch_value":(isOn ? @(1) : @(0)),
         },
     };
     [[MKRGMQTTDataManager shared] sendData:data
@@ -975,7 +975,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-                @"switch":(protocol.isOn ? @(1) : @(0)),
+                @"switch_value":(protocol.isOn ? @(1) : @(0)),
                 @"single_press":(protocol.singlePressIsOn ? @(1) : @(0)),
                 @"double_press":(protocol.doublePressIsOn ? @(1) : @(0)),
                 @"long_press":(protocol.longPressIsOn ? @(1) : @(0)),
@@ -1020,7 +1020,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"precise":(preciseMatch ? @(1) : @(0)),
             @"reverse":(reverseFilter ? @(1) : @(0)),
             @"tagid":tagIDList,
@@ -1066,7 +1066,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(protocol.isOn ? @(1) : @(0)),
+            @"switch_value":(protocol.isOn ? @(1) : @(0)),
             @"delay_response_status":@(protocol.delayRespneseStatus),
             @"door_status":@(protocol.doorStatus),
             @"sensor_sensitivity":@(protocol.sensorSensitivity),
@@ -1133,7 +1133,7 @@
                 @"mac":macAddress
         },
         @"data":@{
-            @"switch":(isOn ? @(1) : @(0)),
+            @"switch_value":(isOn ? @(1) : @(0)),
             @"relation":@(relationship),
             @"rule":dicList,
         }
@@ -2322,7 +2322,7 @@
             @"mac":bleMacAddress,
             @"service_uuid":serviceUUID,
             @"char_uuid":characteristicUUID,
-            @"switch":(notify ? @(1) : @(0))
+            @"switch_value":(notify ? @(1) : @(0))
         }
     };
     [[MKRGMQTTDataManager shared] sendData:data

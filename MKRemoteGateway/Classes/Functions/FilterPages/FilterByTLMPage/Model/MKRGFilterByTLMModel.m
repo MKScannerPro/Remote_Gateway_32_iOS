@@ -57,7 +57,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readFilterByTLMWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = ([returnData[@"data"][@"switch"] integerValue] == 1);
+        self.isOn = ([returnData[@"data"][@"switch_value"] integerValue] == 1);
         self.tlm = [returnData[@"data"][@"tlm_version"] integerValue];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

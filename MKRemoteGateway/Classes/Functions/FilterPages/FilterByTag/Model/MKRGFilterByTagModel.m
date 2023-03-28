@@ -59,7 +59,7 @@
     __block BOOL success = NO;
     [MKRGMQTTInterface rg_readFilterBXPTagWithMacAddress:[MKRGDeviceModeManager shared].macAddress topic:[MKRGDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = ([returnData[@"data"][@"switch"] integerValue] == 1);
+        self.isOn = ([returnData[@"data"][@"switch_value"] integerValue] == 1);
         self.precise = ([returnData[@"data"][@"precise"] integerValue] == 1);
         self.reverse = ([returnData[@"data"][@"reverse"] integerValue] == 1);
         if (ValidArray(returnData[@"data"][@"tagid"])) {
