@@ -43,7 +43,17 @@ extern NSString *const MKRGReceiveBxpButtonDfuResultNotification;
 
 extern NSString *const MKRGReceiveDeviceOfflineNotification;
 
+
+
+@protocol MKRGReceiveDeviceDatasDelegate <NSObject>
+
+- (void)mk_rg_receiveDeviceDatas:(NSDictionary *)data;
+
+@end
+
 @interface MKRGMQTTDataManager : NSObject<MKRGServerManagerProtocol>
+
+@property (nonatomic, weak)id <MKRGReceiveDeviceDatasDelegate>dataDelegate;
 
 @property (nonatomic, assign, readonly)MKRGMQTTSessionManagerState state;
 

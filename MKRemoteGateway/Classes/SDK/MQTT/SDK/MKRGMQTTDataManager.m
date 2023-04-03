@@ -119,6 +119,9 @@ static dispatch_once_t onceToken;
     }
     if (msgID == 3070) {
         //扫描到的数据
+        if ([self.dataDelegate respondsToSelector:@selector(mk_rg_receiveDeviceDatas:)]) {
+            [self.dataDelegate mk_rg_receiveDeviceDatas:data];
+        }
         [[NSNotificationCenter defaultCenter] postNotificationName:MKRGReceiveDeviceDatasNotification
                                                             object:nil
                                                           userInfo:data];

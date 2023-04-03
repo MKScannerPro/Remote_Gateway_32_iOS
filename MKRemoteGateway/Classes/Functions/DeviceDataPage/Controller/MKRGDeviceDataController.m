@@ -39,7 +39,8 @@ static NSTimeInterval const kRefreshInterval = 0.5f;
 
 @interface MKRGDeviceDataController ()<UITableViewDelegate,
 UITableViewDataSource,
-MKRGDeviceDataPageHeaderViewDelegate>
+MKRGDeviceDataPageHeaderViewDelegate,
+MKRGReceiveDeviceDatasDelegate>
 
 @property (nonatomic, strong)MKRGDeviceDataPageHeaderView *headerView;
 
@@ -68,9 +69,7 @@ MKRGDeviceDataPageHeaderViewDelegate>
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:MKRGReceiveDeviceDatasNotification
-                                                  object:nil];
+    [MKRGMQTTDataManager shared].dataDelegate = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -78,10 +77,7 @@ MKRGDeviceDataPageHeaderViewDelegate>
     self.view.shiftHeightAsDodgeViewForMLInputDodger = 50.0f;
     [self.view registerAsDodgeViewForMLInputDodgerWithOriginalY:self.view.frame.origin.y];
     if (self.headerModel.isOn) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(receiveDeviceDatas:)
-                                                     name:MKRGReceiveDeviceDatasNotification
-                                                   object:nil];
+        [MKRGMQTTDataManager shared].dataDelegate = self;
     }
 }
 
@@ -166,13 +162,12 @@ MKRGDeviceDataPageHeaderViewDelegate>
     }];
 }
 
-#pragma mark - note
-- (void)receiveDeviceDatas:(NSNotification *)note {
-    NSDictionary *user = note.userInfo;
-    if (!ValidDict(user) || !ValidStr(user[@"device_info"][@"mac"]) || ![[MKRGDeviceModeManager shared].macAddress isEqualToString:user[@"device_info"][@"mac"]]) {
+#pragma mark - MKRGReceiveDeviceDatasDelegate
+- (void)mk_rg_receiveDeviceDatas:(NSDictionary *)data {
+    if (!ValidDict(data) || !ValidStr(data[@"device_info"][@"mac"]) || ![[MKRGDeviceModeManager shared].macAddress isEqualToString:data[@"device_info"][@"mac"]]) {
         return;
     }
-    NSArray *tempList = user[@"data"];
+    NSArray *tempList = data[@"data"];
     if (!ValidArray(tempList)) {
         return;
     }
@@ -266,16 +261,11 @@ MKRGDeviceDataPageHeaderViewDelegate>
     [self.tableView reloadData];
     if (self.headerModel.isOn) {
         //打开
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(receiveDeviceDatas:)
-                                                     name:MKRGReceiveDeviceDatasNotification
-                                                   object:nil];
+        [MKRGMQTTDataManager shared].dataDelegate = self;
         return;
     }
     //关闭状态
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:MKRGReceiveDeviceDatasNotification
-                                                  object:nil];
+    [MKRGMQTTDataManager shared].dataDelegate = nil;
 }
 
 #pragma mark - 定时刷新
