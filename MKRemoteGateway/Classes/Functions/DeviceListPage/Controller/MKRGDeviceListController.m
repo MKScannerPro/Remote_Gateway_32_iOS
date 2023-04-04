@@ -611,7 +611,7 @@ MKRGDeviceModelDelegate>
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.defaultTitle = @"MKRemoteGateway";
+    self.defaultTitle = @"MKScannerPro";
     [self.rightButton setImage:LOADICON(@"MKRemoteGateway", @"MKRGDeviceListController", @"rg_menuIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.footerView];
     [self.footerView mas_remakeConstraints:^(MASConstraintMaker *make) {
