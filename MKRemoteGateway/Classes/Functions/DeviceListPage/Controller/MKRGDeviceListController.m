@@ -346,7 +346,7 @@ MKRGDeviceModelDelegate>
     }
     if ([MKRGMQTTDataManager shared].state == MKRGMQTTSessionManagerStateConnected) {
         [self.loadingView hidden];
-        self.defaultTitle = @"MKRemoteGateway";
+        self.defaultTitle = @"MKScannerPro";
         return;
     }
     if ([MKRGMQTTDataManager shared].state == MKRGMQTTSessionManagerStateError) {
