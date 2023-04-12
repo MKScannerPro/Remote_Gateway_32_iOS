@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKRemoteGateway'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A short description of MKRemoteGateway.'
 
 # This description is used to generate tags and improve search results.
@@ -514,6 +514,7 @@ TODO: Add long description of the pod here.
           sssss.source_files = 'MKRemoteGateway/Classes/Functions/FilterPages/UploadOptionPage/Controller/**'
         
           sssss.dependency 'MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model'
+          sssss.dependency 'MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View'
           
           sssss.dependency 'MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage'
           sssss.dependency 'MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage'
