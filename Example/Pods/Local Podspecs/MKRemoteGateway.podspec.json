@@ -1,9 +1,9 @@
 {
   "name": "MKRemoteGateway",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "A short description of MKRemoteGateway.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/aadyx2007@163.com/MKRemoteGateway",
+  "homepage": "https://github.com/MKScannerPro/MKScannerPro_Remote_Gateway_iOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "aadyx2007@163.com": "aadyx2007@163.com"
   },
   "source": {
-    "git": "https://github.com/aadyx2007@163.com/MKRemoteGateway.git",
-    "tag": "0.0.1"
+    "git": "https://github.com/MKScannerPro/MKScannerPro_Remote_Gateway_iOS.git",
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "12.0"
@@ -759,6 +759,9 @@
                   "source_files": "MKRemoteGateway/Classes/Functions/FilterPages/UploadOptionPage/Controller/**",
                   "dependencies": {
                     "MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model": [
+
+                    ],
+                    "MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View": [
 
                     ],
                     "MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage": [

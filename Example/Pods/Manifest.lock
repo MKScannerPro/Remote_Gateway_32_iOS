@@ -24,43 +24,48 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.5)
   - MKBaseBleModule (1.1.4)
-  - MKBaseModuleLibrary (1.1.6):
-    - MKBaseModuleLibrary/Base (= 1.1.6)
-    - MKBaseModuleLibrary/Category (= 1.1.6)
-    - MKBaseModuleLibrary/Defines (= 1.1.6)
-    - MKBaseModuleLibrary/Tools (= 1.1.6)
-  - MKBaseModuleLibrary/Base (1.1.6):
-    - MKBaseModuleLibrary/Base/Cell (= 1.1.6)
-    - MKBaseModuleLibrary/Base/Controller (= 1.1.6)
-    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.6)
-    - MKBaseModuleLibrary/Base/View (= 1.1.6)
-  - MKBaseModuleLibrary/Base/Cell (1.1.6):
-    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.6)
-  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.6):
+  - MKBaseModuleLibrary (1.1.7):
+    - MKBaseModuleLibrary/Base (= 1.1.7)
+    - MKBaseModuleLibrary/Category (= 1.1.7)
+    - MKBaseModuleLibrary/Defines (= 1.1.7)
+    - MKBaseModuleLibrary/Tools (= 1.1.7)
+  - MKBaseModuleLibrary/Base (1.1.7):
+    - MKBaseModuleLibrary/Base/Cell (= 1.1.7)
+    - MKBaseModuleLibrary/Base/Controller (= 1.1.7)
+    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.7)
+    - MKBaseModuleLibrary/Base/View (= 1.1.7)
+  - MKBaseModuleLibrary/Base/Cell (1.1.7):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.7)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.7):
     - Masonry
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/Controller (1.1.6):
+  - MKBaseModuleLibrary/Base/Controller (1.1.7):
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - WRNavigationBar
-  - MKBaseModuleLibrary/Base/NavigationController (1.1.6)
-  - MKBaseModuleLibrary/Base/View (1.1.6):
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.6)
-    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.6)
-  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.6)
-  - MKBaseModuleLibrary/Base/View/TableView (1.1.6)
-  - MKBaseModuleLibrary/Category (1.1.6):
+  - MKBaseModuleLibrary/Base/NavigationController (1.1.7)
+  - MKBaseModuleLibrary/Base/View (1.1.7):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.7)
+    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.7)
+  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.7)
+  - MKBaseModuleLibrary/Base/View/TableView (1.1.7)
+  - MKBaseModuleLibrary/Category (1.1.7):
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast
-  - MKBaseModuleLibrary/Defines (1.1.6)
-  - MKBaseModuleLibrary/Tools (1.1.6):
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.6)
-    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.6)
-    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.6)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.6)
-  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.6)
-  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.6)
+  - MKBaseModuleLibrary/Defines (1.1.7)
+  - MKBaseModuleLibrary/Tools (1.1.7):
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKExcelManager (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.7)
+  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.7)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.7)
+  - MKBaseModuleLibrary/Tools/MKExcelManager (1.1.7):
+    - libxlsxwriter
+    - MKBaseModuleLibrary/Defines
+    - SSZipArchive
+  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.7)
   - MKBaseMQTTModule (0.0.3):
     - MKBaseMQTTModule/MQTT (= 0.0.3)
     - MKBaseMQTTModule/NetworkManager (= 0.0.3)
@@ -452,140 +457,140 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKRemoteGateway (0.0.1):
-    - MKRemoteGateway/CTMediator (= 0.0.1)
-    - MKRemoteGateway/DeviceModel (= 0.0.1)
-    - MKRemoteGateway/Expand (= 0.0.1)
-    - MKRemoteGateway/Functions (= 0.0.1)
-    - MKRemoteGateway/SDK (= 0.0.1)
-    - MKRemoteGateway/Target (= 0.0.1)
-  - MKRemoteGateway/CTMediator (0.0.1):
+  - MKRemoteGateway (0.0.2):
+    - MKRemoteGateway/CTMediator (= 0.0.2)
+    - MKRemoteGateway/DeviceModel (= 0.0.2)
+    - MKRemoteGateway/Expand (= 0.0.2)
+    - MKRemoteGateway/Functions (= 0.0.2)
+    - MKRemoteGateway/SDK (= 0.0.2)
+    - MKRemoteGateway/Target (= 0.0.2)
+  - MKRemoteGateway/CTMediator (0.0.2):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKRemoteGateway/DeviceModel (0.0.1):
+  - MKRemoteGateway/DeviceModel (0.0.2):
     - MKBaseModuleLibrary
     - MKRemoteGateway/SDK/MQTT
-  - MKRemoteGateway/Expand (0.0.1):
+  - MKRemoteGateway/Expand (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKRemoteGateway/Expand/BaseController (= 0.0.1)
-    - MKRemoteGateway/Expand/BleBaseController (= 0.0.1)
-    - MKRemoteGateway/Expand/DatabaseManager (= 0.0.1)
-    - MKRemoteGateway/Expand/ExcelManager (= 0.0.1)
-    - MKRemoteGateway/Expand/ImportServerPage (= 0.0.1)
-    - MKRemoteGateway/Expand/View (= 0.0.1)
-  - MKRemoteGateway/Expand/BaseController (0.0.1):
+    - MKRemoteGateway/Expand/BaseController (= 0.0.2)
+    - MKRemoteGateway/Expand/BleBaseController (= 0.0.2)
+    - MKRemoteGateway/Expand/DatabaseManager (= 0.0.2)
+    - MKRemoteGateway/Expand/ExcelManager (= 0.0.2)
+    - MKRemoteGateway/Expand/ImportServerPage (= 0.0.2)
+    - MKRemoteGateway/Expand/View (= 0.0.2)
+  - MKRemoteGateway/Expand/BaseController (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/SDK/MQTT
-  - MKRemoteGateway/Expand/BleBaseController (0.0.1):
+  - MKRemoteGateway/Expand/BleBaseController (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/SDK/BLE
-  - MKRemoteGateway/Expand/DatabaseManager (0.0.1):
+  - MKRemoteGateway/Expand/DatabaseManager (0.0.2):
     - FMDB
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/DeviceModel
-  - MKRemoteGateway/Expand/ExcelManager (0.0.1):
+  - MKRemoteGateway/Expand/ExcelManager (0.0.2):
     - libxlsxwriter
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - SSZipArchive
-  - MKRemoteGateway/Expand/ImportServerPage (0.0.1):
+  - MKRemoteGateway/Expand/ImportServerPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKRemoteGateway/Expand/ImportServerPage/Controller (= 0.0.1)
-  - MKRemoteGateway/Expand/ImportServerPage/Controller (0.0.1):
+    - MKRemoteGateway/Expand/ImportServerPage/Controller (= 0.0.2)
+  - MKRemoteGateway/Expand/ImportServerPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View (0.0.1):
+  - MKRemoteGateway/Expand/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKRemoteGateway/Expand/View/AlertView (= 0.0.1)
-    - MKRemoteGateway/Expand/View/FilterCell (= 0.0.1)
-    - MKRemoteGateway/Expand/View/UserCredentialsView (= 0.0.1)
-  - MKRemoteGateway/Expand/View/AlertView (0.0.1):
+    - MKRemoteGateway/Expand/View/AlertView (= 0.0.2)
+    - MKRemoteGateway/Expand/View/FilterCell (= 0.0.2)
+    - MKRemoteGateway/Expand/View/UserCredentialsView (= 0.0.2)
+  - MKRemoteGateway/Expand/View/AlertView (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View/FilterCell (0.0.1):
+  - MKRemoteGateway/Expand/View/FilterCell (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKRemoteGateway/Expand/View/FilterCell/FilterBeaconCell (= 0.0.1)
-    - MKRemoteGateway/Expand/View/FilterCell/FilterByRawDataCell (= 0.0.1)
-    - MKRemoteGateway/Expand/View/FilterCell/FilterEditSectionHeaderView (= 0.0.1)
-    - MKRemoteGateway/Expand/View/FilterCell/FilterNormalTextFieldCell (= 0.0.1)
-  - MKRemoteGateway/Expand/View/FilterCell/FilterBeaconCell (0.0.1):
+    - MKRemoteGateway/Expand/View/FilterCell/FilterBeaconCell (= 0.0.2)
+    - MKRemoteGateway/Expand/View/FilterCell/FilterByRawDataCell (= 0.0.2)
+    - MKRemoteGateway/Expand/View/FilterCell/FilterEditSectionHeaderView (= 0.0.2)
+    - MKRemoteGateway/Expand/View/FilterCell/FilterNormalTextFieldCell (= 0.0.2)
+  - MKRemoteGateway/Expand/View/FilterCell/FilterBeaconCell (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View/FilterCell/FilterByRawDataCell (0.0.1):
+  - MKRemoteGateway/Expand/View/FilterCell/FilterByRawDataCell (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View/FilterCell/FilterEditSectionHeaderView (0.0.1):
+  - MKRemoteGateway/Expand/View/FilterCell/FilterEditSectionHeaderView (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View/FilterCell/FilterNormalTextFieldCell (0.0.1):
+  - MKRemoteGateway/Expand/View/FilterCell/FilterNormalTextFieldCell (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Expand/View/UserCredentialsView (0.0.1):
+  - MKRemoteGateway/Expand/View/UserCredentialsView (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKRemoteGateway/Functions (0.0.1):
+  - MKRemoteGateway/Functions (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules (= 0.0.1)
-    - MKRemoteGateway/Functions/DeviceDataPage (= 0.0.1)
-    - MKRemoteGateway/Functions/DeviceListPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules (= 0.0.1)
-    - MKRemoteGateway/Functions/ScanPage (= 0.0.1)
-    - MKRemoteGateway/Functions/ServerForApp (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules (= 0.0.2)
+    - MKRemoteGateway/Functions/DeviceDataPage (= 0.0.2)
+    - MKRemoteGateway/Functions/DeviceListPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules (= 0.0.2)
+    - MKRemoteGateway/Functions/ScanPage (= 0.0.2)
+    - MKRemoteGateway/Functions/ServerForApp (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -595,7 +600,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -604,18 +609,18 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Model (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -625,7 +630,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleNetworkSettingsPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -634,18 +639,18 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -655,7 +660,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -664,19 +669,19 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -687,7 +692,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -696,7 +701,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -705,17 +710,17 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage/Controller (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage/Controller (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ConnectSuccessPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -724,17 +729,17 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage/Controller (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage/Controller (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/DeviceParamsListPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -750,18 +755,18 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -771,7 +776,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -780,19 +785,19 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/View (= 0.0.1)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/View (= 0.0.2)
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Controller (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -803,7 +808,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Model (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -812,7 +817,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/View (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/Pages/ServerForDevice/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -821,7 +826,7 @@ PODS:
     - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel (0.0.1):
+  - MKRemoteGateway/Functions/AddDeviceModules/ParamsModel (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -829,17 +834,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceDataPage (0.0.1):
+  - MKRemoteGateway/Functions/DeviceDataPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/DeviceDataPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/DeviceDataPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/DeviceDataPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/DeviceDataPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceDataPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/DeviceDataPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -851,7 +856,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceDataPage/View (0.0.1):
+  - MKRemoteGateway/Functions/DeviceDataPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -859,18 +864,18 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceListPage (0.0.1):
+  - MKRemoteGateway/Functions/DeviceListPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/DeviceListPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/DeviceListPage/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/DeviceListPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/DeviceListPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/DeviceListPage/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/DeviceListPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceListPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/DeviceListPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -883,7 +888,7 @@ PODS:
     - MKRemoteGateway/Functions/ServerForApp
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceListPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/DeviceListPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -891,7 +896,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/DeviceListPage/View (0.0.1):
+  - MKRemoteGateway/Functions/DeviceListPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -900,39 +905,39 @@ PODS:
     - MKRemoteGateway/Functions/DeviceListPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByTag (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTag (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -941,7 +946,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/DuplicateDataFilterPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -949,17 +954,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -968,7 +973,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByAdvNamePage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -976,18 +981,18 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Header (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Header (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -997,7 +1002,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Header (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Header (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1005,7 +1010,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1014,17 +1019,17 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByBeaconPage/Header
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1033,7 +1038,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByButtonPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1041,17 +1046,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1060,7 +1065,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByMacPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1068,17 +1073,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1087,7 +1092,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByOtherPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1095,17 +1100,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1114,7 +1119,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByPirPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1122,17 +1127,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1149,7 +1154,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByURLPage
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1157,17 +1162,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTag (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTag (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByTag/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByTag/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTag/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTag/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTag/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTag/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1176,7 +1181,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByTag/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTag/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTag/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1184,17 +1189,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1203,7 +1208,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByTLMPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1211,17 +1216,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1230,7 +1235,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByUIDPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1238,17 +1243,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1257,7 +1262,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/FilterByURLPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1265,17 +1270,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1284,7 +1289,7 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1292,18 +1297,18 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1315,9 +1320,10 @@ PODS:
     - MKRemoteGateway/Functions/FilterPages/FilterByRawDataPage
     - MKRemoteGateway/Functions/FilterPages/UploadDataOptionPage
     - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model
+    - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1325,7 +1331,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View (0.0.1):
+  - MKRemoteGateway/Functions/FilterPages/UploadOptionPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1333,29 +1339,29 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1364,7 +1370,7 @@ PODS:
     - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ButtonDFUPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1372,17 +1378,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1392,7 +1398,7 @@ PODS:
     - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/BXPButtonPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1400,17 +1406,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1421,7 +1427,7 @@ PODS:
     - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/View (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/ManageBleDevicesPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1429,17 +1435,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1448,7 +1454,7 @@ PODS:
     - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/View (0.0.1):
+  - MKRemoteGateway/Functions/ManageBleModules/NormalConnectedPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1456,18 +1462,18 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ScanPage (0.0.1):
+  - MKRemoteGateway/Functions/ScanPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ScanPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ScanPage/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/ScanPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/ScanPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ScanPage/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/ScanPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ScanPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ScanPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1478,7 +1484,7 @@ PODS:
     - MKRemoteGateway/Functions/ScanPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ScanPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/ScanPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1486,7 +1492,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ScanPage/View (0.0.1):
+  - MKRemoteGateway/Functions/ScanPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1495,18 +1501,18 @@ PODS:
     - MKRemoteGateway/Functions/ScanPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ServerForApp (0.0.1):
+  - MKRemoteGateway/Functions/ServerForApp (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/ServerForApp/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/ServerForApp/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/ServerForApp/View (= 0.0.1)
+    - MKRemoteGateway/Functions/ServerForApp/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/ServerForApp/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/ServerForApp/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ServerForApp/Controller (0.0.1):
+  - MKRemoteGateway/Functions/ServerForApp/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1516,7 +1522,7 @@ PODS:
     - MKRemoteGateway/Functions/ServerForApp/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ServerForApp/Model (0.0.1):
+  - MKRemoteGateway/Functions/ServerForApp/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1524,7 +1530,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/ServerForApp/View (0.0.1):
+  - MKRemoteGateway/Functions/ServerForApp/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1532,30 +1538,30 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/OTAPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/SettingPage (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/OTAPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/SettingPage (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1564,7 +1570,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/DeviceInfoPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1572,29 +1578,29 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1603,7 +1609,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttNetworkSettingsPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1611,17 +1617,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1633,7 +1639,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1641,18 +1647,18 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1662,7 +1668,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1670,7 +1676,7 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1678,17 +1684,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1697,7 +1703,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1705,33 +1711,33 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1740,7 +1746,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/CommunicatePage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1748,17 +1754,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1767,7 +1773,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/DataReportPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1775,17 +1781,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1794,7 +1800,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1802,17 +1808,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1821,7 +1827,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1829,17 +1835,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1848,7 +1854,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/NTPServerPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1856,17 +1862,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1875,7 +1881,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1883,17 +1889,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1902,7 +1908,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/View (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/ResetByButtonPage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1910,17 +1916,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/View (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/View (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1930,7 +1936,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/View
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/View (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/NormalSettings/SystemTimePage/View (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1938,17 +1944,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/OTAPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/OTAPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/OTAPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/OTAPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/OTAPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/OTAPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/OTAPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/OTAPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1957,7 +1963,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/OTAPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/OTAPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/OTAPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1965,17 +1971,17 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/SettingPage (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/SettingPage (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
     - MKRemoteGateway/DeviceModel
     - MKRemoteGateway/Expand
-    - MKRemoteGateway/Functions/SettingPages/SettingPage/Controller (= 0.0.1)
-    - MKRemoteGateway/Functions/SettingPages/SettingPage/Model (= 0.0.1)
+    - MKRemoteGateway/Functions/SettingPages/SettingPage/Controller (= 0.0.2)
+    - MKRemoteGateway/Functions/SettingPages/SettingPage/Model (= 0.0.2)
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/SettingPage/Controller (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/SettingPage/Controller (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1988,7 +1994,7 @@ PODS:
     - MKRemoteGateway/Functions/SettingPages/SettingPage/Model
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/Functions/SettingPages/SettingPage/Model (0.0.1):
+  - MKRemoteGateway/Functions/SettingPages/SettingPage/Model (0.0.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKRemoteGateway/CTMediator
@@ -1996,21 +2002,21 @@ PODS:
     - MKRemoteGateway/Expand
     - MKRemoteGateway/SDK
     - MLInputDodger
-  - MKRemoteGateway/SDK (0.0.1):
-    - MKRemoteGateway/SDK/BLE (= 0.0.1)
-    - MKRemoteGateway/SDK/MQTT (= 0.0.1)
-  - MKRemoteGateway/SDK/BLE (0.0.1):
+  - MKRemoteGateway/SDK (0.0.2):
+    - MKRemoteGateway/SDK/BLE (= 0.0.2)
+    - MKRemoteGateway/SDK/MQTT (= 0.0.2)
+  - MKRemoteGateway/SDK/BLE (0.0.2):
     - MKBaseBleModule
-  - MKRemoteGateway/SDK/MQTT (0.0.1):
-    - MKRemoteGateway/SDK/MQTT/Manager (= 0.0.1)
-    - MKRemoteGateway/SDK/MQTT/SDK (= 0.0.1)
-  - MKRemoteGateway/SDK/MQTT/Manager (0.0.1):
+  - MKRemoteGateway/SDK/MQTT (0.0.2):
+    - MKRemoteGateway/SDK/MQTT/Manager (= 0.0.2)
+    - MKRemoteGateway/SDK/MQTT/SDK (= 0.0.2)
+  - MKRemoteGateway/SDK/MQTT/Manager (0.0.2):
     - MKBaseModuleLibrary
     - MKBaseMQTTModule
-  - MKRemoteGateway/SDK/MQTT/SDK (0.0.1):
+  - MKRemoteGateway/SDK/MQTT/SDK (0.0.2):
     - MKBaseModuleLibrary
     - MKRemoteGateway/SDK/MQTT/Manager
-  - MKRemoteGateway/Target (0.0.1):
+  - MKRemoteGateway/Target (0.0.2):
     - MKBaseModuleLibrary
     - MKRemoteGateway/Functions
   - MLInputDodger (1.5.2)
@@ -2063,10 +2069,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
-  MKBaseModuleLibrary: 6de43aeeb519d1c5f3aa94ebaffe8b3a57351312
+  MKBaseModuleLibrary: 9ab75dfc3c79d88aa3ad13068cc5d47cba77bdd2
   MKBaseMQTTModule: b3a5c4776b60d5c395da4fd7019fc1cf64ec48a6
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKRemoteGateway: 0d099396d4eeeb1f8b7199852f6c250d99215632
+  MKRemoteGateway: fc103856e78ec07c21e6b30df768365a291e29a0
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
