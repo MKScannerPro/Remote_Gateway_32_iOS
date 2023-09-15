@@ -68,16 +68,14 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
             return @"Client File cannot be empty.";
         }
     }
-    if (self.lwtStatus) {
-        if (self.lwtQos < 0 || self.lwtQos > 2) {
-            return @"LWT Qos error";
-        }
-        if (!ValidStr(self.lwtTopic) || self.lwtTopic.length > 128 || ![self.lwtTopic isAsciiString]) {
-            return @"LWT Topic error";
-        }
-        if (!ValidStr(self.lwtPayload) || self.lwtPayload.length > 128 || ![self.lwtPayload isAsciiString]) {
-            return @"LWT Payload error";
-        }
+    if (self.lwtQos < 0 || self.lwtQos > 2) {
+        return @"LWT Qos error";
+    }
+    if (!ValidStr(self.lwtTopic) || self.lwtTopic.length > 128 || ![self.lwtTopic isAsciiString]) {
+        return @"LWT Topic error";
+    }
+    if (!ValidStr(self.lwtPayload) || self.lwtPayload.length > 128 || ![self.lwtPayload isAsciiString]) {
+        return @"LWT Payload error";
     }
     return @"";
 }
@@ -242,23 +240,21 @@ static NSString *const defaultPubTopic = @"{device_name}/{device_id}/device_to_a
             [self operationFailedBlockWithMsg:@"Config LWT Status Timeout" block:failedBlock];
             return;
         }
-        if (self.lwtStatus) {
-            if (![self configLWTQos]) {
-                [self operationFailedBlockWithMsg:@"Config LWT Qos Timeout" block:failedBlock];
-                return;
-            }
-            if (![self configLWTRetain]) {
-                [self operationFailedBlockWithMsg:@"Config LWT Retain Timeout" block:failedBlock];
-                return;
-            }
-            if (![self configLWTTopic]) {
-                [self operationFailedBlockWithMsg:@"Config LWT Topic Timeout" block:failedBlock];
-                return;
-            }
-            if (![self configLWTPayload]) {
-                [self operationFailedBlockWithMsg:@"Config LWT Payload Timeout" block:failedBlock];
-                return;
-            }
+        if (![self configLWTQos]) {
+            [self operationFailedBlockWithMsg:@"Config LWT Qos Timeout" block:failedBlock];
+            return;
+        }
+        if (![self configLWTRetain]) {
+            [self operationFailedBlockWithMsg:@"Config LWT Retain Timeout" block:failedBlock];
+            return;
+        }
+        if (![self configLWTTopic]) {
+            [self operationFailedBlockWithMsg:@"Config LWT Topic Timeout" block:failedBlock];
+            return;
+        }
+        if (![self configLWTPayload]) {
+            [self operationFailedBlockWithMsg:@"Config LWT Payload Timeout" block:failedBlock];
+            return;
         }
         
         if (![self configSSLStatus]) {

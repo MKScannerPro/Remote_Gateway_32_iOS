@@ -76,7 +76,7 @@ MKRGManageBleDevicesCellDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self runloopObserver];
-    [self addNotifications];
+    [self addNotes];
 }
 
 #pragma mark - UITableViewDelegate
@@ -195,7 +195,7 @@ MKRGManageBleDevicesCellDelegate>
 }
 
 #pragma mark - private method
-- (void)addNotifications {
+- (void)addNotes {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveDeviceDatas:)
                                                  name:MKRGReceiveDeviceDatasNotification

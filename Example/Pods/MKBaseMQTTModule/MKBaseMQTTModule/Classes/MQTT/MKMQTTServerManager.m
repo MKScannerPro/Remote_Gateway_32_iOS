@@ -258,7 +258,7 @@ static dispatch_once_t onceToken;
         return;
     }
     if (!self.sessionManager) {
-        [self operationFailedBlockWithMsg:@"MTQQ Server disconnect" block:failedBlock];
+        [self operationFailedBlockWithMsg:@"MQTT Server disconnect" block:failedBlock];
         return;
     }
     UInt16 msgid = [self.sessionManager sendData:[MKMQTTServerSDKAdopter parseJsonToData:data] //要发送的消息体
@@ -290,7 +290,7 @@ static dispatch_once_t onceToken;
         return;
     }
     if (!self.sessionManager) {
-        [self operationFailedBlockWithMsg:@"MTQQ Server disconnect" block:failedBlock];
+        [self operationFailedBlockWithMsg:@"MQTT Server disconnect" block:failedBlock];
         return;
     }
     UInt16 msgid = [self.sessionManager sendData:data   //要发送的消息体

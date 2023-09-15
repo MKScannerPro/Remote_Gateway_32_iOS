@@ -41,7 +41,7 @@ install_framework()
 
   if [ -L "${source}" ]; then
     echo "Symlinked..."
-    source="$(readlink "${source}")"
+    source="$(readlink -f "${source}")"
   fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
@@ -188,7 +188,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MKCustomUIModule/MKCustomUIModule.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MKRemoteGateway/MKRemoteGateway.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MLInputDodger/MLInputDodger.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
@@ -208,7 +207,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MKCustomUIModule/MKCustomUIModule.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MKRemoteGateway/MKRemoteGateway.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MLInputDodger/MLInputDodger.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
@@ -228,7 +226,6 @@ if [[ "$CONFIGURATION" == "adhoc" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MKCustomUIModule/MKCustomUIModule.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MKRemoteGateway/MKRemoteGateway.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MLInputDodger/MLInputDodger.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"

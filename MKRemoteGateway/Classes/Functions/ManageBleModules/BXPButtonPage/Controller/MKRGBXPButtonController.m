@@ -81,7 +81,7 @@ MKRGButtonFirmwareCellDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self loadSectionDatas];
-    [self addNotifications];
+    [self addNotes];
     [self readDatasFromDevice];
 }
 
@@ -329,7 +329,7 @@ MKRGButtonFirmwareCellDelegate>
 }
 
 #pragma mark - private method
-- (void)addNotifications {
+- (void)addNotes {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveDisconnect:)
                                                  name:MKRGReceiveGatewayDisconnectBXPButtonNotification

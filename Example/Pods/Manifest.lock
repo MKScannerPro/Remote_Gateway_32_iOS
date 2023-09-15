@@ -24,54 +24,56 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.5)
   - MKBaseBleModule (1.1.4)
-  - MKBaseModuleLibrary (1.1.7):
-    - MKBaseModuleLibrary/Base (= 1.1.7)
-    - MKBaseModuleLibrary/Category (= 1.1.7)
-    - MKBaseModuleLibrary/Defines (= 1.1.7)
-    - MKBaseModuleLibrary/Tools (= 1.1.7)
-  - MKBaseModuleLibrary/Base (1.1.7):
-    - MKBaseModuleLibrary/Base/Cell (= 1.1.7)
-    - MKBaseModuleLibrary/Base/Controller (= 1.1.7)
-    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.7)
-    - MKBaseModuleLibrary/Base/View (= 1.1.7)
-  - MKBaseModuleLibrary/Base/Cell (1.1.7):
-    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.7)
-  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.7):
+  - MKBaseModuleLibrary (1.1.8):
+    - MKBaseModuleLibrary/Base (= 1.1.8)
+    - MKBaseModuleLibrary/Category (= 1.1.8)
+    - MKBaseModuleLibrary/Defines (= 1.1.8)
+    - MKBaseModuleLibrary/Tools (= 1.1.8)
+  - MKBaseModuleLibrary/Base (1.1.8):
+    - MKBaseModuleLibrary/Base/Cell (= 1.1.8)
+    - MKBaseModuleLibrary/Base/Controller (= 1.1.8)
+    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.8)
+    - MKBaseModuleLibrary/Base/View (= 1.1.8)
+  - MKBaseModuleLibrary/Base/Cell (1.1.8):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.8)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.8):
     - Masonry
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/Controller (1.1.7):
+  - MKBaseModuleLibrary/Base/Controller (1.1.8):
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - WRNavigationBar
-  - MKBaseModuleLibrary/Base/NavigationController (1.1.7)
-  - MKBaseModuleLibrary/Base/View (1.1.7):
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.7)
-    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.7)
-  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.7)
-  - MKBaseModuleLibrary/Base/View/TableView (1.1.7)
-  - MKBaseModuleLibrary/Category (1.1.7):
+  - MKBaseModuleLibrary/Base/NavigationController (1.1.8)
+  - MKBaseModuleLibrary/Base/View (1.1.8):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.8)
+    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.8)
+  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.8)
+  - MKBaseModuleLibrary/Base/View/TableView (1.1.8)
+  - MKBaseModuleLibrary/Category (1.1.8):
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast
-  - MKBaseModuleLibrary/Defines (1.1.7)
-  - MKBaseModuleLibrary/Tools (1.1.7):
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKExcelManager (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.7)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.7)
-  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.7)
-  - MKBaseModuleLibrary/Tools/MKExcelManager (1.1.7):
+  - MKBaseModuleLibrary/Defines (1.1.8)
+  - MKBaseModuleLibrary/Tools (1.1.8):
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.8)
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.8)
+    - MKBaseModuleLibrary/Tools/MKExcelManager (= 1.1.8)
+    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.8)
+  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.8)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.8)
+  - MKBaseModuleLibrary/Tools/MKExcelManager (1.1.8):
     - libxlsxwriter
     - MKBaseModuleLibrary/Defines
     - SSZipArchive
-  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.7)
-  - MKBaseMQTTModule (0.0.3):
-    - MKBaseMQTTModule/MQTT (= 0.0.3)
-    - MKBaseMQTTModule/NetworkManager (= 0.0.3)
-  - MKBaseMQTTModule/MQTT (0.0.3):
-    - MQTTClient
-  - MKBaseMQTTModule/NetworkManager (0.0.3):
+  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.8)
+  - MKBaseMQTTModule (0.0.7):
+    - MKBaseMQTTModule/MQTT (= 0.0.7)
+    - MKBaseMQTTModule/MQTTClient (= 0.0.7)
+    - MKBaseMQTTModule/NetworkManager (= 0.0.7)
+  - MKBaseMQTTModule/MQTT (0.0.7):
+    - MKBaseMQTTModule/MQTTClient
+  - MKBaseMQTTModule/MQTTClient (0.0.7)
+  - MKBaseMQTTModule/NetworkManager (0.0.7):
     - AFNetworking
   - MKCustomUIModule (1.4.4):
     - CircleProgressBar
@@ -2020,14 +2022,6 @@ PODS:
     - MKBaseModuleLibrary
     - MKRemoteGateway/Functions
   - MLInputDodger (1.5.2)
-  - MQTTClient (0.15.3):
-    - MQTTClient/Core (= 0.15.3)
-  - MQTTClient/Core (0.15.3):
-    - MQTTClient/Manager
-    - MQTTClient/Min
-  - MQTTClient/Manager (0.15.3):
-    - MQTTClient/Min
-  - MQTTClient/Min (0.15.3)
   - SSZipArchive (2.4.3)
   - Toast (4.0.0)
   - WRNavigationBar (1.4.0)
@@ -2050,7 +2044,6 @@ SPEC REPOS:
     - MKBaseMQTTModule
     - MKCustomUIModule
     - MLInputDodger
-    - MQTTClient
     - SSZipArchive
     - Toast
     - WRNavigationBar
@@ -2069,16 +2062,15 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
-  MKBaseModuleLibrary: 9ab75dfc3c79d88aa3ad13068cc5d47cba77bdd2
-  MKBaseMQTTModule: b3a5c4776b60d5c395da4fd7019fc1cf64ec48a6
+  MKBaseModuleLibrary: 8d0292b517d87552083f9180eeaa4569605707db
+  MKBaseMQTTModule: 5434692b017865eede3b2ac6d2b4df52acd65a91
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
   MKRemoteGateway: fc103856e78ec07c21e6b30df768365a291e29a0
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
-  MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
 
 PODFILE CHECKSUM: 9f6ff320323f6926e99ccaf97a5ef4ec964d202a
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1

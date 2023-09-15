@@ -6,11 +6,11 @@
 //  Copyright © 2023 aadyx2007@163.com. All rights reserved.
 //
 
-#import <MKBaseModuleLibrary/MKBaseViewController.h>
+#import "MKRGBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKRGDeviceInfoController : MKBaseViewController
+@interface MKRGDeviceInfoController : MKRGBaseViewController
 
 @end
 

@@ -126,8 +126,6 @@ static dispatch_once_t onceToken;
         NSError *error = [sessionManager lastErrorCode];
         NSString *errorMsg = [NSString stringWithFormat:@"MQTT Session Manager Error:%@",error.localizedDescription];
         [MKMQTTServerLogManager saveDataWithFileName:mqttLogName dataList:@[errorMsg]];
-        //连接失败，尝试重连
-        [self connect];
     }
     @synchronized (self.managerList) {
         for (id <MKRGServerManagerProtocol>protocol in self.managerList) {

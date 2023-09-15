@@ -86,7 +86,10 @@ MKRGReceiveDeviceDatasDelegate>
     [self loadSubViews];
     [self readDataFromServer];
     [self runloopObserver];
-    [self addNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveDeviceNameChanged:)
+                                                 name:@"mk_rg_deviceNameChangedNotification"
+                                               object:nil];
 }
 
 #pragma mark - super method
@@ -299,14 +302,6 @@ MKRGReceiveDeviceDatasDelegate>
     });
     //添加监听，模式为kCFRunLoopCommonModes
     CFRunLoopAddObserver(CFRunLoopGetCurrent(), self.observerRef, kCFRunLoopCommonModes);
-}
-
-#pragma mark - private method
-- (void)addNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receiveDeviceNameChanged:)
-                                                 name:@"mk_rg_deviceNameChangedNotification"
-                                               object:nil];
 }
 
 #pragma mark - UI

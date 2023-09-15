@@ -67,7 +67,7 @@ MKTextFieldCellDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self loadSectionDatas];
-    [self addNotifications];
+    [self addNotes];
 }
 
 #pragma mark - UITableViewDelegate
@@ -186,7 +186,7 @@ MKTextFieldCellDelegate>
 }
 
 #pragma mark - private method
-- (void)addNotifications {
+- (void)addNotes {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveDfuProgress:)
                                                  name:MKRGReceiveBxpButtonDfuProgressNotification
