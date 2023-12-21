@@ -16,7 +16,7 @@
     "tag": "0.0.2"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "14.0"
   },
   "resource_bundles": {
     "MKRemoteGateway": [
