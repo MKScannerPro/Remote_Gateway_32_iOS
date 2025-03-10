@@ -1,21 +1,21 @@
 //
-//  MKRGFilterEditSectionHeaderView.m
-//  MKRemoteGateway_Example
+//  MKFilterEditSectionHeaderView.m
+//  MKCustomUIModule_Example
 //
-//  Created by aa on 2023/2/6..
-//  Copyright © 2023 aadyx2007@163.com. All rights reserved.
+//  Created by aa on 2024/1/9.
+//  Copyright © 2024 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKRGFilterEditSectionHeaderView.h"
+#import "MKFilterEditSectionHeaderView.h"
 
 #import "Masonry.h"
 
 #import "MKMacroDefines.h"
 
-@implementation MKRGFilterEditSectionHeaderViewModel
+@implementation MKFilterEditSectionHeaderViewModel
 @end
 
-@interface MKRGFilterEditSectionHeaderView ()
+@interface MKFilterEditSectionHeaderView ()
 
 @property (nonatomic, strong)UILabel *msgLabel;
 
@@ -25,12 +25,12 @@
 
 @end
 
-@implementation MKRGFilterEditSectionHeaderView
+@implementation MKFilterEditSectionHeaderView
 
-+ (MKRGFilterEditSectionHeaderView *)initHeaderViewWithTableView:(UITableView *)tableView {
-    MKRGFilterEditSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"MKRGFilterEditSectionHeaderViewIdenty"];
++ (MKFilterEditSectionHeaderView *)initHeaderViewWithTableView:(UITableView *)tableView {
+    MKFilterEditSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"MKFilterEditSectionHeaderViewIdenty"];
     if (!headerView) {
-        headerView = [[MKRGFilterEditSectionHeaderView alloc] initWithReuseIdentifier:@"MKRGFilterEditSectionHeaderViewIdenty"];
+        headerView = [[MKFilterEditSectionHeaderView alloc] initWithReuseIdentifier:@"MKFilterEditSectionHeaderViewIdenty"];
     }
     return headerView;
 }
@@ -69,22 +69,22 @@
 
 #pragma mark - event method
 - (void)addButtonPressed {
-    if ([self.delegate respondsToSelector:@selector(mk_rg_filterEditSectionHeaderView_addButtonPressed:)]) {
-        [self.delegate mk_rg_filterEditSectionHeaderView_addButtonPressed:self.dataModel.index];
+    if ([self.delegate respondsToSelector:@selector(mk_filterEditSectionHeaderView_addButtonPressed:)]) {
+        [self.delegate mk_filterEditSectionHeaderView_addButtonPressed:self.dataModel.index];
     }
 }
 
 - (void)subButtonPressed {
-    if ([self.delegate respondsToSelector:@selector(mk_rg_filterEditSectionHeaderView_subButtonPressed:)]) {
-        [self.delegate mk_rg_filterEditSectionHeaderView_subButtonPressed:self.dataModel.index];
+    if ([self.delegate respondsToSelector:@selector(mk_filterEditSectionHeaderView_subButtonPressed:)]) {
+        [self.delegate mk_filterEditSectionHeaderView_subButtonPressed:self.dataModel.index];
     }
 }
 
 #pragma mark - setter
-- (void)setDataModel:(MKRGFilterEditSectionHeaderViewModel *)dataModel {
+- (void)setDataModel:(MKFilterEditSectionHeaderViewModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel || ![_dataModel isKindOfClass:MKRGFilterEditSectionHeaderViewModel.class]) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKFilterEditSectionHeaderViewModel.class]) {
         return;
     }
     self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : RGBCOLOR(242, 242, 242));
@@ -105,7 +105,7 @@
 - (UIButton *)addButton {
     if (!_addButton) {
         _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_addButton setImage:LOADICON(@"MKRemoteGateway", @"MKRGFilterEditSectionHeaderView", @"rg_addIcon.png") forState:UIControlStateNormal];
+        [_addButton setImage:LOADICON(@"MKCustomUIModule", @"MKFilterEditSectionHeaderView", @"mk_customUI_addIcon.png") forState:UIControlStateNormal];
         [_addButton addTarget:self
                        action:@selector(addButtonPressed)
              forControlEvents:UIControlEventTouchUpInside];
@@ -116,7 +116,7 @@
 - (UIButton *)subButton {
     if (!_subButton) {
         _subButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_subButton setImage:LOADICON(@"MKRemoteGateway", @"MKRGFilterEditSectionHeaderView", @"rg_subIcon.png") forState:UIControlStateNormal];
+        [_subButton setImage:LOADICON(@"MKCustomUIModule", @"MKFilterEditSectionHeaderView", @"mk_customUI_subIcon.png") forState:UIControlStateNormal];
         [_subButton addTarget:self
                        action:@selector(subButtonPressed)
              forControlEvents:UIControlEventTouchUpInside];

@@ -103,26 +103,6 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKRemoteGateway/Classes/Expand/View/AlertView/**'
       end
       
-      sss.subspec 'FilterCell' do |ssss|
-        
-        ssss.subspec 'FilterBeaconCell' do |sssss|
-          sssss.source_files = 'MKRemoteGateway/Classes/Expand/View/FilterCell/FilterBeaconCell/**'
-        end
-        
-        ssss.subspec 'FilterByRawDataCell' do |sssss|
-          sssss.source_files = 'MKRemoteGateway/Classes/Expand/View/FilterCell/FilterByRawDataCell/**'
-        end
-        
-        ssss.subspec 'FilterEditSectionHeaderView' do |sssss|
-          sssss.source_files = 'MKRemoteGateway/Classes/Expand/View/FilterCell/FilterEditSectionHeaderView/**'
-        end
-        
-        ssss.subspec 'FilterNormalTextFieldCell' do |sssss|
-          sssss.source_files = 'MKRemoteGateway/Classes/Expand/View/FilterCell/FilterNormalTextFieldCell/**'
-        end
-      
-      end
-      
       sss.subspec 'UserCredentialsView' do |ssss|
         
         ssss.source_files = 'MKRemoteGateway/Classes/Expand/View/UserCredentialsView/**'
@@ -166,6 +146,12 @@ TODO: Add long description of the pod here.
         end
     end
     
+  end
+  
+  s.subspec 'LoginManager' do |ss|
+    ss.source_files = 'MKRemoteGateway/Classes/LoginManager/**'
+  
+    ss.dependency 'MKIotCloudManager'
   end
   
   s.subspec 'Functions' do |ss|
@@ -309,6 +295,7 @@ TODO: Add long description of the pod here.
           ssss.dependency 'MKRemoteGateway/Functions/ServerForApp'
           ssss.dependency 'MKRemoteGateway/Functions/ScanPage'
           ssss.dependency 'MKRemoteGateway/Functions/DeviceDataPage'
+          ssss.dependency 'MKRemoteGateway/Functions/SyncDevicePage'
         end
         
         sss.subspec 'Model' do |ssss|
@@ -821,11 +808,24 @@ TODO: Add long description of the pod here.
         
     end
     
+    ss.subspec 'SyncDevicePage' do |sss|
+        sss.subspec 'Controller' do |ssss|
+          ssss.source_files = 'MKRemoteGateway/Classes/Functions/SyncDevicePage/Controller/**'
+          
+          ssss.dependency 'MKRemoteGateway/Functions/SyncDevicePage/View'
+        end
+        
+        sss.subspec 'View' do |ssss|
+          ssss.source_files = 'MKRemoteGateway/Classes/Functions/SyncDevicePage/View/**'
+        end
+    end
+    
     ss.dependency 'MKRemoteGateway/SDK'
     ss.dependency 'MKRemoteGateway/Expand'
     ss.dependency 'MKRemoteGateway/CTMediator'
     ss.dependency 'MKRemoteGateway/DeviceModel'
     ss.dependency 'MKRemoteGateway/CTMediator'
+    ss.dependency 'MKRemoteGateway/LoginManager'
   
     ss.dependency 'MKBaseModuleLibrary'
     ss.dependency 'MKCustomUIModule'

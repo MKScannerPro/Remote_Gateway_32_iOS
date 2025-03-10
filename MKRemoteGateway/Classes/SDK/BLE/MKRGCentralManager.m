@@ -408,6 +408,10 @@ static dispatch_once_t onceToken;
     
     NSString *deviceType = [MKBLEBaseSDKAdopter hexStringFromData:manufacturerData];
     
+    if (![deviceType isEqualToString:@"00"] && ![deviceType isEqualToString:@"10"] && ![deviceType isEqualToString:@"20"] && ![deviceType isEqualToString:@"30"]) {
+        return @{};
+    }
+    
     NSString *tempMac = [content uppercaseString];
     NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",
     [tempMac substringWithRange:NSMakeRange(0, 2)],

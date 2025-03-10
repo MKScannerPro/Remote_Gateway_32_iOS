@@ -24,14 +24,14 @@
 
 #import "MKRGDeviceModel.h"
 
-#import "MKRGFilterNormalTextFieldCell.h"
+#import "MKFilterNormalTextFieldCell.h"
 
 #import "MKRGFilterByUIDModel.h"
 
 @interface MKRGFilterByUIDController ()<UITableViewDelegate,
 UITableViewDataSource,
 mk_textSwitchCellDelegate,
-MKRGFilterNormalTextFieldCellDelegate>
+MKFilterNormalTextFieldCellDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -96,7 +96,7 @@ MKRGFilterNormalTextFieldCellDelegate>
         cell.delegate = self;
         return cell;
     }
-    MKRGFilterNormalTextFieldCell *cell = [MKRGFilterNormalTextFieldCell initCellWithTableView:tableView];
+    MKFilterNormalTextFieldCell *cell = [MKFilterNormalTextFieldCell initCellWithTableView:tableView];
     cell.dataModel = self.section1List[indexPath.row];
     cell.delegate = self;
     return cell;
@@ -116,19 +116,19 @@ MKRGFilterNormalTextFieldCellDelegate>
     }
 }
 
-#pragma mark - MKRGFilterNormalTextFieldCellDelegate
-- (void)mk_rg_filterNormalTextFieldValueChanged:(NSString *)text index:(NSInteger)index {
+#pragma mark - MKFilterNormalTextFieldCellDelegate
+- (void)mk_filterNormalTextFieldValueChanged:(NSString *)text index:(NSInteger)index {
     if (index == 0) {
         //namespace ID
         self.dataModel.namespaceID = text;
-        MKRGFilterNormalTextFieldCellModel *cellModel = self.section1List[0];
+        MKFilterNormalTextFieldCellModel *cellModel = self.section1List[0];
         cellModel.textFieldValue = text;
         return;
     }
     if (index == 1) {
         //instance ID
         self.dataModel.instanceID = text;
-        MKRGFilterNormalTextFieldCellModel *cellModel = self.section1List[1];
+        MKFilterNormalTextFieldCellModel *cellModel = self.section1List[1];
         cellModel.textFieldValue = text;
         return;
     }
@@ -180,7 +180,7 @@ MKRGFilterNormalTextFieldCellDelegate>
 }
 
 - (void)loadSection1Datas {
-    MKRGFilterNormalTextFieldCellModel *cellModel1 = [[MKRGFilterNormalTextFieldCellModel alloc] init];
+    MKFilterNormalTextFieldCellModel *cellModel1 = [[MKFilterNormalTextFieldCellModel alloc] init];
     cellModel1.index = 0;
     cellModel1.msg = @"Namespace ID";
     cellModel1.textFieldType = mk_hexCharOnly;
@@ -189,7 +189,7 @@ MKRGFilterNormalTextFieldCellDelegate>
     cellModel1.maxLength = 20;
     [self.section1List addObject:cellModel1];
     
-    MKRGFilterNormalTextFieldCellModel *cellModel2 = [[MKRGFilterNormalTextFieldCellModel alloc] init];
+    MKFilterNormalTextFieldCellModel *cellModel2 = [[MKFilterNormalTextFieldCellModel alloc] init];
     cellModel2.index = 1;
     cellModel2.msg = @"Instance ID";
     cellModel2.textFieldType = mk_hexCharOnly;
