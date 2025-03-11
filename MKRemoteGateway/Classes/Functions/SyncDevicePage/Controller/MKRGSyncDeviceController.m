@@ -109,7 +109,7 @@ MKRGSyncDeviceCellDelegate>
     [[MKHudManager share] showHUDWithTitle:@"Loading..." inView:self.view isPenetration:NO];
     [[MKNormalService share] addScannerProDevicesToCloud:uploadList isHome:[MKRGUserLoginManager shared].isHome token:self.token sucBlock:^(id returnData) {
         [[MKHudManager share] hide];
-        [self.view showCentralToast:@"Add devices success"];
+        [self.view showCentralToast:@"Sync success"];
     } failBlock:^(NSError *error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];

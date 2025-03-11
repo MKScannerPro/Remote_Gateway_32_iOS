@@ -19,10 +19,10 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - libxlsxwriter (1.1.5)
+  - libxlsxwriter (1.2.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.7.6)
+  - MJRefresh (3.7.9)
   - MKBaseBleModule (1.1.4)
   - MKBaseModuleLibrary (2.0.9):
     - MKBaseModuleLibrary/Base (= 2.0.9)
@@ -491,30 +491,30 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKIotCloudManager (0.0.5):
-    - MKIotCloudManager/SDK (= 0.0.5)
-    - MKIotCloudManager/View (= 0.0.5)
-  - MKIotCloudManager/SDK (0.0.5):
-    - MKIotCloudManager/SDK/Config (= 0.0.5)
-    - MKIotCloudManager/SDK/MKNetwork (= 0.0.5)
-    - MKIotCloudManager/SDK/NetworkService (= 0.0.5)
-  - MKIotCloudManager/SDK/Config (0.0.5)
-  - MKIotCloudManager/SDK/MKNetwork (0.0.5):
+  - MKIotCloudManager (0.0.8):
+    - MKIotCloudManager/SDK (= 0.0.8)
+    - MKIotCloudManager/View (= 0.0.8)
+  - MKIotCloudManager/SDK (0.0.8):
+    - MKIotCloudManager/SDK/Config (= 0.0.8)
+    - MKIotCloudManager/SDK/MKNetwork (= 0.0.8)
+    - MKIotCloudManager/SDK/NetworkService (= 0.0.8)
+  - MKIotCloudManager/SDK/Config (0.0.8)
+  - MKIotCloudManager/SDK/MKNetwork (0.0.8):
     - AFNetworking
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
-  - MKIotCloudManager/SDK/NetworkService (0.0.5):
+  - MKIotCloudManager/SDK/NetworkService (0.0.8):
     - AFNetworking
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
     - MKIotCloudManager/SDK/MKNetwork
-  - MKIotCloudManager/View (0.0.5):
-    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.5)
-    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.5)
-  - MKIotCloudManager/View/AccountLoginAlertView (0.0.5):
+  - MKIotCloudManager/View (0.0.8):
+    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.8)
+    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.8)
+  - MKIotCloudManager/View/AccountLoginAlertView (0.0.8):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKIotCloudManager/View/ExitAccountAlertView (0.0.5):
+  - MKIotCloudManager/View/ExitAccountAlertView (0.0.8):
     - MKBaseModuleLibrary
     - MKCustomUIModule
   - MKRemoteGateway (0.0.2):
@@ -2246,7 +2246,7 @@ PODS:
     - MKRemoteGateway/Functions
   - MLInputDodger (1.5.2)
   - SSZipArchive (2.4.3)
-  - Toast (4.1.0)
+  - Toast (4.1.1)
   - WRNavigationBar (1.4.0)
 
 DEPENDENCIES:
@@ -2281,19 +2281,19 @@ SPEC CHECKSUMS:
   CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  libxlsxwriter: 07cdc00cf0edb30ce9773efbbb49a03459a6e0f0
+  libxlsxwriter: 58b8454485fa0936de8a8bce3df7bac9dce7730e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKBaseMQTTModule: 5434692b017865eede3b2ac6d2b4df52acd65a91
   MKCustomUIModule: bbc862397ad4ffad0a88de756265a29aad5ddaab
-  MKIotCloudManager: 2d80758d19191e83977c12313842d0febb047dab
+  MKIotCloudManager: 2f9ed9b3c6eff5ee81725dc3b89099deffbd7230
   MKRemoteGateway: 3c3580ce504cab006111d091199dfcf2ab1a74f3
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
-  Toast: ec33c32b8688982cecc6348adeae667c1b9938da
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
 
 PODFILE CHECKSUM: f48d9e2fc02328ccba8cbaf64379e8fc5f618ac4

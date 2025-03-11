@@ -396,7 +396,7 @@ SOFTWARE.
 
 Libxlsxwriter is released under a FreeBSD license:
 
-    Copyright 2014-2022, John McNamara <jmcnamara@cpan.org>
+    Copyright 2014-2025, John McNamara <jmcnamara@cpan.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
