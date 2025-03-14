@@ -134,6 +134,7 @@
 #import "MKRGSettingModel.h"
 #import "MKRGSyncDeviceController.h"
 #import "MKRGSyncDeviceCell.h"
+#import "MKRGNetworkService.h"
 #import "MKRGUserLoginManager.h"
 #import "CBPeripheral+MKRGAdd.h"
 #import "MKRGBLESDK.h"
